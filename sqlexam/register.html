@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>登录 | SQL语言在线实验与考试平台</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9">
+		<link rel="icon" class="ico-class" type="image/x-icon" />
+		<link href="bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/toastr.min.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/register.css" />
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/particles.min.js"></script>
+		<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/toastr.min.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/register.js"></script>
+
+	</head>
+
+	<body>
+		<div id="particles-js">
+			<canvas class="particles-js-canvas-el"></canvas>
+		</div>
+		<nav class="navbar navbar-fixed-top navbar navbar-light nav-top-header">
+			<div class="top-header">
+				<div class="top-header-left">
+					<div class="navbar-show-hide">
+						<svg class="left-show-svg" width="0" height="25" viewBox="0 0 12 16">
+							<path fill="#545F7E" fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"></path>
+						</svg>
+					</div>
+					<div>
+						<a href="index.html"><img src="img/logo-2.png" class="logo-img" /></a>
+					</div>
+				</div>
+				<div class="top-header-right pull-right">
+					<div class="top-header-infrom">
+						<svg t="1591932064567" class="infrom-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="32242" width="20" height="20">
+							<path class="infrom-path" d="M767.962138 319.095525c-12.094456-20.280906-28.183899-41.467437-49.55565-62.282508-32.265868-31.447223-75.29487-55.636135-132.644019-66.070788 11.330046-13.207813 18.381649-29.755698 18.381649-47.995108 0-42.646286-43.398416-83.907015-106.664321-77.215615-45.321208 4.802376-82.564437 34.56933-82.564438 77.215615 0 18.23941 7.030114 34.754548 18.316158 47.962362-58.96495 9.834996-248.28069 58.233286-224.769206 388.881938 10.457166 147.226133-120.417557 223.525889-120.417557 223.525889s-11.155061 44.686758 72.238254 44.686759h698.451506c75.774801 0 77.718059-44.817742 77.718059-44.817742-137.926326-95.618754-125.876895-223.394906-125.876895-223.394906s7.117095-60.842717-4.67037-134.772496c-0.655939-4.093225-0.39295-26.317389-8.862855-57.611116-2.839675-10.544147-22.138206-56.486502-29.080315-68.112284zM498.635109 959.184809c-72.019267 0-98.565876-67.054185-98.565876-67.054186h201.213721c0.001023 0-29.579689 67.054185-102.647845 67.054186z" p-id="32243" fill="#FFFFFF"></path>
+						</svg>
+						<div class="infrom-radius"></div>
+					</div>
+					<div class="top-header-btn">
+						<a href="index.html" class="btn btn-default">首页</a>
+						<a href="login.html" class="btn btn-success">登录</a>
+						<a href="register.html" class="btn btn-primary">注册</a>
+						<a href="#" class="btn btn-link lang-change">EN</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div class="index-center">
+			<div class="slider-content">
+				<div class="slider-center-continue">
+					<div class="slider-center-top">
+						<div class="slider-center-from">
+							<div class="from-active user-login"><label for="exampleInputUserLogin1">用户注册</label></div>
+							<div class="follow-us">关注我们</div>
+						</div>
+						<div class="ercode_tab">
+						</div>
+					</div>
+					<div class="slider-from-input">
+						<form class="user-register-center" onsubmit="return false;">
+							<div class="form-group">
+								<label for="exampleInputNickname">昵称</label>
+								<input type="text" name="nickname" class="form-control" required id="exampleInputNickname" placeholder="昵称" />
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1">邮箱</label>
+								<input type="email" name="email" class="form-control" required id="exampleInputEmail1" placeholder="邮箱" />
+							</div>
+							<div class="form-group">
+								<label for="exampleInputPassword1">密码</label>
+								<input type="password" name="password" class="form-control" required id="exampleInputPassword1" placeholder="密码" />
+							</div>
+							<div class="form-group">
+								<label for="exampleInputPassword2">重复密码</label>
+								<input type="password" name="password" class="form-control" required id="exampleInputPassword2" placeholder="重复密码" />
+							</div>
+							<div class="form-group">
+								<button type="submit" data-loading-text="Loading..." class="btn btn-primary user-btn">注册</button>
+								<div class="form-group">
+									<a class="btn bnt-link btn-xs" href="login.html"> 登录</a>
+									<a class="btn bnt-link btn-xs pull-right" href="register.html"> 忘记密码</a>
+								</div>
+							</div>
+						</form>
+						<div class="follow-us-center">
+							<div class="form-group">
+								<p><img src="img/code-login.png" /></p>
+								<p>
+									关注我们
+									<a href="sqlapp.html" target="_blank" rel="noopener noreferrer">微信公众号</a>
+								</p>
+								<p>在「微信」页面右上角打开扫一扫</p>
+							</div>
+						</div>
+						<div class="form-group silder-social bootom-one">
+							点击注册表示您已同意<a>用户协议</a>和<a>隐私条款</a>
+						</div>
+						<div class="form-group silder-social bootom-two">
+							欢迎您关注我们
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bottom-copyright">Copyright © 2020-2020 贵州师范学院 黔ICP备20003381号</div>
+	</body>
+
+</html>

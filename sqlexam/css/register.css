@@ -1,0 +1,151 @@
+.index-center {
+	position: absolute;
+	float: left;
+	width: 100%;
+	height: 80%;
+	-moz-user-select: none; 
+	-khtml-user-select: none; 
+	user-select: none;
+}
+
+.slider-content {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.slider-center-continue {
+	background-color: #FFFFFF;
+	border-radius: 3px;
+	padding-bottom: 12px;
+}
+
+.slider-center-top {
+	display: flex;
+	flex-direction: row;
+	padding-left: 12px;
+}
+
+.slider-center-from {
+	padding: 12px 0px;
+	display: flex;
+	flex-direction: row;
+}
+
+.slider-center-from div {
+	color: color: #1A1A1A;
+	margin-right: 24px;
+	display: inline-block;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.user-login label,.follow-us label{
+	cursor: pointer;
+}
+
+.ercode_tab {
+	margin-left: 70px;
+	display: flex;
+	justify-content: flex-end;
+	height: 40px;
+	width: 52px;
+}
+
+.ercode_tab svg{
+	cursor: pointer;
+}
+
+.ercode_tab svg:nth-child(2){
+	display: none;
+}
+
+.from-active {
+	border-bottom-style: solid;
+	border-bottom-color: #0084ff;
+}
+
+.slider-center-top div:nth-child(2) {
+	width: 65px;
+}
+
+.slider-from-input {
+	padding: 0px 12px;
+}
+
+.btn-change {
+	padding: 10px 0 10px 10px;
+	display: inline-block;
+	font-size: 12px;
+}
+
+.silder-social {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0px 5px;
+	color: #212529;
+}
+
+.silder-social a{
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.bootom-two {
+	text-align: center;
+	display: none;
+}
+
+.btn-social,
+.btn-social span {
+	display: flex;
+	align-items: center;
+	margin-left: 5px;
+}
+
+.code-change{
+	padding-left: 0px;
+}
+
+.slider-from-input form{
+	height: 365.63px;
+}
+
+.code-login,.follow-us-center{
+	height: 365.63px;
+	display: none;
+}
+
+.code-login div,.follow-us-center div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 365.63px;
+}
+
+.me-checkbox{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-weight: 100;
+	margin: 0;
+	cursor: pointer;
+}
+
+.me-checkbox span{
+	margin-left: 5px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+}
+
+.user-btn{
+	display:block;
+	width:100%
+}

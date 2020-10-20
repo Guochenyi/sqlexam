@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>公共题库</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9">
+		<link rel="icon" class="ico-class" type="image/x-icon" />
+		<link href="bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="kindeditor/themes/default/default.css" />
+		<link rel="stylesheet" href="css/probsets.css" />
+		<script src="js/jquery.min.js"></script>
+		<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="kindeditor/kindeditor-all-min.js"></script>
+		<script type="text/javascript" src="kindeditor/lang/zh-CN.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/probsets.js"></script>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top navbar navbar-light nav-top-header">
+			<div class="top-header">
+				<div class="top-header-left">
+					<div class="navbar-show-hide">
+						<svg class="left-show-svg" width="20" height="25" viewBox="0 0 12 16">
+							<path fill="#545F7E" fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"></path>
+						</svg>
+					</div>
+					<div>
+						<img src="img/logo.png" class="logo-img" />
+					</div>
+				</div>
+				<div class="top-header-right pull-right">
+					<div class="top-header-infrom">
+						<svg t="1591932064567" class="infrom-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="32242" width="20" height="20">
+							<path class="infrom-path" d="M767.962138 319.095525c-12.094456-20.280906-28.183899-41.467437-49.55565-62.282508-32.265868-31.447223-75.29487-55.636135-132.644019-66.070788 11.330046-13.207813 18.381649-29.755698 18.381649-47.995108 0-42.646286-43.398416-83.907015-106.664321-77.215615-45.321208 4.802376-82.564437 34.56933-82.564438 77.215615 0 18.23941 7.030114 34.754548 18.316158 47.962362-58.96495 9.834996-248.28069 58.233286-224.769206 388.881938 10.457166 147.226133-120.417557 223.525889-120.417557 223.525889s-11.155061 44.686758 72.238254 44.686759h698.451506c75.774801 0 77.718059-44.817742 77.718059-44.817742-137.926326-95.618754-125.876895-223.394906-125.876895-223.394906s7.117095-60.842717-4.67037-134.772496c-0.655939-4.093225-0.39295-26.317389-8.862855-57.611116-2.839675-10.544147-22.138206-56.486502-29.080315-68.112284zM498.635109 959.184809c-72.019267 0-98.565876-67.054185-98.565876-67.054186h201.213721c0.001023 0-29.579689 67.054185-102.647845 67.054186z" p-id="32243" fill="#3BA539"></path>
+						</svg>
+						<div class="infrom-radius"></div>
+					</div>
+					<div class="top-header-btn">
+						<a href="" class="btn btn-default">社区</a>
+						<a href="login.html" class="btn btn-success">登录</a>
+						<a href="register.html" class="btn btn-primary">注册</a>
+						<a href="#" class="btn btn-link lang-change">EN</a>
+					</div>
+				</div>
+			</div>
+			<div class="topbar-bottom-colors"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+		</nav>
+		<div class="upload-page">
+			<svg t="1591853480900" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3782" width="20" height="20">
+				<path d="M714.7 303.2a32.3 32.3 0 1 0 64.6 0 32.3 32.3 0 1 0-64.6 0zM789 493.9a45.4 45.4 0 1 0 90.8 0 45.4 45.4 0 1 0-90.8 0zM732.1 720.6a57 57 0 1 0 114 0 57 57 0 1 0-114 0zM513 854a64.5 64.5 0 1 0 129 0 64.5 64.5 0 1 0-129 0zM263.3 812.8a77.1 77.1 0 1 0 154.2 0 77.1 77.1 0 1 0-154.2 0zM97.4 595.6a87.1 87.1 0 1 0 174.2 0 87.1 87.1 0 1 0-174.2 0zM146.8 335.5a96.8 96.8 0 1 0 193.6 0 96.8 96.8 0 1 0-193.6 0zM410 206.4a101.3 101.3 0 1 0 202.6 0 101.3 101.3 0 1 0-202.6 0z" fill="#707070" p-id="3783"></path>
+			</svg>
+		</div>
+		<div class="main-window main-window-hide">
+			<div class="left-header">
+				<div class="left-right-border">
+					<div class="left-mold">
+					<div class="mold-top">
+						系统功能
+					</div>
+					<div class="mold-main">
+						<div class="btn-modal-skip">
+							<div>
+								<svg t="1591289559505" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3235" width="18" height="18">
+									<path d="M875.4 400.9v322.8L597.1 867.2V544.4l278.3-143.5m39.7-85.2c-3 0-6.2 0.7-9.2 2.3L548.3 502.4c-6.7 3.4-10.8 10.3-10.8 17.8v412.2c0 11.6 9.5 20 20 20 3 0 6.2-0.7 9.2-2.3l357.7-184.4c6.7-3.4 10.8-10.3 10.8-17.8V335.8c0-11.7-9.6-20.1-20.1-20.1zM146.6 400.9l278.3 143.5v322.8L146.6 723.7V400.9m-39.8-85.2c-10.4 0-19.9 8.4-19.9 19.9V748c0 7.5 4.2 14.3 10.8 17.7l357.9 184.5c3 1.5 6.1 2.2 9.1 2.2 10.4 0 19.9-8.4 19.9-19.9V520.1c0-7.5-4.2-14.3-10.8-17.7L115.9 317.9c-3-1.5-6.1-2.2-9.1-2.2zM499.8 129.8l280.7 122.7-272.6 137.8-284.4-143.7 276.3-116.8m0.2-63.2c-2.7 0-5.4 0.5-7.9 1.6L122 224.7c-15.6 6.6-16.8 28.2-2 36.4l378 191.1c3.1 1.7 6.5 2.6 9.9 2.6 3.4 0 6.9-0.9 9.9-2.6l365.1-184.6c14.6-8.2 13.6-29.6-1.8-36.3l-372.9-163c-2.6-1.1-5.4-1.7-8.2-1.7z" p-id="3236" fill="#1296db"></path>
+									<path d="M377.2 650.7l-155.7-80.8c-2-1.1-2.8-3.6-1.8-5.6l21.5-41.4c1.1-2 3.6-2.8 5.6-1.8L402.5 602c2 1.1 2.8 3.6 1.8 5.6L382.8 649c-1 2-3.5 2.8-5.6 1.7zM377.5 746.7l-155.7-80.8c-2-1.1-2.8-3.6-1.8-5.6l21.5-41.4c1.1-2 3.6-2.8 5.6-1.8L402.8 698c2 1.1 2.8 3.6 1.8 5.6L383.1 745c-1 2-3.5 2.8-5.6 1.7z" p-id="3237" fill="#1296db"></path>
+								</svg>
+							</div>
+							<div>题库</div>
+						</div>
+						<div class="btn-modal-skip">
+							<div>
+								<svg t="1591289864469" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4881" width="18" height="18">
+									<path d="M512 590.65c-5.59 0-11.18-1.38-16.23-4.16L81.5 359.17C70.71 353.25 64 341.91 64 329.6s6.71-23.65 17.5-29.56L495.77 72.73a33.65 33.65 0 0 1 32.45 0L942.5 300.04A33.73 33.73 0 0 1 960 329.6c0 12.31-6.71 23.65-17.5 29.56L528.23 586.49a33.74 33.74 0 0 1-16.23 4.16zM167.84 329.6L512 518.45 856.16 329.6 512 140.76 167.84 329.6z" p-id="4882" fill="#1296db"></path>
+									<path d="M512 773.04c-5.59 0-11.18-1.38-16.23-4.16L81.5 541.56c-16.32-8.96-22.3-29.46-13.34-45.79 8.97-16.3 29.47-22.28 45.79-13.34L512 700.85l398.04-218.42c16.36-8.95 36.83-2.98 45.79 13.34 8.96 16.34 2.99 36.83-13.34 45.79L528.23 768.88a33.628 33.628 0 0 1-16.23 4.16z" p-id="4883" fill="#1296db"></path>
+									<path d="M512 955.44c-5.59 0-11.18-1.38-16.23-4.16L81.5 723.96C65.18 715 59.2 694.5 68.16 678.17c8.97-16.31 29.47-22.26 45.79-13.34L512 883.24l398.04-218.42c16.36-8.97 36.83-2.96 45.79 13.34 8.96 16.34 2.99 36.83-13.34 45.79L528.23 951.28a33.74 33.74 0 0 1-16.23 4.16z" p-id="4884" fill="#1296db"></path>
+								</svg>
+							</div>
+							<div>作业</div>
+						</div>
+						<div class="btn-modal-skip">
+							<svg t="1591290073700" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7901" width="18" height="18">
+								<path d="M845.334 137.331V886.68H178.667V137.331h666.667m0-83.333H178.667c-46.021 0-83.333 37.313-83.333 83.333V886.68c0 46.021 37.313 83.334 83.333 83.334h666.667c46.021 0 83.333-37.313 83.333-83.334V137.331c0-46.02-37.313-83.333-83.333-83.333z" p-id="7902" fill="#1afa29"></path>
+								<path d="M470.334 771.405a41.677 41.677 0 0 1-29.623-12.37L336.545 653.75c-16.186-16.357-16.043-42.725 0.314-58.92 16.379-16.194 42.756-16.031 58.93 0.326l74.545 75.337 157.877-159.565c16.195-16.378 42.572-16.5 58.93-0.326 16.357 16.195 16.5 42.563 0.315 58.92l-187.5 189.514a41.678 41.678 0 0 1-29.622 12.369z" p-id="7903" fill="#1afa29"></path>
+								<path d="M366.146 272.402h291.707c23.011 0 41.646 18.636 41.646 41.626v0.061c0 22.99-18.636 41.646-41.646 41.646H366.146c-23.01 0-41.646-18.657-41.646-41.646v-0.061c0-22.99 18.637-41.626 41.646-41.626z" p-id="7904" fill="#1afa29"></path>
+							</svg>
+							<div>考试</div>
+						</div>
+						<div class="btn-modal-skip">
+							<svg t="1591289953192" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7194" width="18" height="18">
+								<path d="M157.808219 1002.958904c-10.520548-11.221918-11.923288-23.145205-9.117808-75.046575 2.805479-54.005479 6.312329-69.435616 32.263014-123.441096 33.665753-71.539726 108.010959-185.161644 178.849315-272.832877 48.394521-61.019178 49.09589-61.720548 49.79726-105.205479 0.70137-42.783562 0-44.186301-19.638356-51.2-45.589041-16.131507-57.512329-63.123288-23.846576-94.684932 14.027397-13.326027 24.547945-14.027397 145.884932-14.027397 127.649315 0 131.156164 0.70137 145.884932 16.131507 21.041096 22.443836 20.339726 56.810959-2.10411 78.553424-9.117808 9.819178-23.145205 17.534247-31.561644 17.534247-12.624658 0-14.027397 4.208219-14.027397 44.186301v43.484932l52.60274 66.630137c140.975342 178.147945 213.917808 319.123288 213.917808 413.106849 0 34.367123-2.805479 44.887671-15.430137 56.810959-14.728767 14.027397-23.145205 14.027397-352.789041 14.027397-326.838356 0-338.060274-0.70137-350.684932-14.027397zM478.334247 232.153425c-5.610959-2.805479-8.416438-13.326027-7.013699-22.443836 2.805479-21.041096 31.561644-23.145205 43.484931-4.208219 6.312329 10.520548 4.909589 14.728767-5.610958 23.145205-16.131507 11.221918-18.235616 11.923288-30.860274 3.50685zM534.443836 187.265753c-30.860274-32.263014-9.819178-82.060274 33.665753-82.060274 44.186301 0 65.227397 52.60274 32.964384 82.761644-21.041096 19.638356-47.693151 19.638356-66.630137-0.70137zM394.169863 187.967123c-14.728767-14.728767-10.520548-47.693151 7.715069-54.005479 30.860274-11.923288 60.317808 27.353425 39.978082 52.60274-10.520548 11.923288-36.471233 12.624658-47.693151 1.402739zM446.071233 90.476712c-23.846575-18.936986-25.249315-56.810959-2.80548-72.241096 52.60274-37.172603 112.920548 28.756164 66.630137 71.539726-20.339726 19.638356-39.978082 19.638356-63.824657 0.70137z" p-id="7195" fill="#1afa29"></path>
+							</svg>
+							<div>实验</div>
+						</div>
+						<div class="btn-modal-skip">
+							<svg t="1591290259616" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8789" width="18" height="18">
+								<path d="M4.608 407.04l509.952 337.92c-2.048 20.48-4.096 40.96-5.632 61.44-104.448-76.288-208.384-152.576-312.832-228.864-7.68-5.632-20.48-8.192-29.184-11.264-1.024 56.832-2.56 113.664-3.584 169.984 107.008 74.24 212.992 155.648 323.584 223.744 18.432 11.264 36.352 12.8 54.272 0.512 107.008-77.312 214.016-154.112 320.512-231.424V522.24c52.224-33.792 104.448-67.584 156.16-101.376 9.216-6.144 7.168-30.208-1.536-36.352-155.648-107.52-310.784-215.04-466.432-322.56-18.432-12.8-50.688-7.168-68.608 4.608C324.608 167.424 167.936 268.288 11.776 369.152c-4.096 5.12-7.68 10.752-11.776 15.872 1.536 7.68 3.072 14.848 4.608 22.016z m361.984-168.96l145.92 91.648V230.4l242.176 158.72-242.176 164.352V452.096l-145.92 103.424v-317.44z m0 0" p-id="8790" fill="#d4237a"></path>
+							</svg>
+							<div>课堂</div>
+						</div>
+						<div class="btn-modal-skip">
+							<svg t="1591290297661" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9773" width="18" height="18">
+								<path d="M 511.991 158.56 l 326.944 204.163 l -326.944 204.163 l -326.926 -204.163 L 511.991 158.56 M 512 81.564 c -11.307 0 -22.613 2.691 -31.247 8.075 L 74.716 343.222 c -17.249 10.767 -17.249 28.235 0 39.02 l 406.037 253.565 c 8.634 5.401 19.94 8.093 31.247 8.093 c 11.297 0 22.605 -2.691 31.229 -8.093 l 406.055 -253.565 c 17.25 -10.785 17.25 -28.253 0 -39.02 L 543.229 89.639 c -8.624 -5.383 -19.932 -8.075 -31.229 -8.075 Z" p-id="9774" fill="#d4237a"></path>
+								<path d="M 512 942.436 c -158.396 0 -318.75 -49.109 -318.75 -142.97 V 452.298 h 75 v 347.167 c 0 19.721 85.419 67.969 243.75 67.969 c 158.332 0 243.75 -48.248 243.75 -67.969 V 452.298 h 75 v 347.167 c 0 93.861 -160.354 142.971 -318.75 142.971 Z" p-id="9775" fill="#d4237a"></path>
+								<path d="M 899.104 321.616 c 20.709 0 37.5 16.791 37.5 37.5 v 225 c 0 20.709 -16.791 37.499 -37.5 37.499 s -37.5 -16.79 -37.5 -37.499 v -225 c 0 -20.71 16.791 -37.5 37.5 -37.5 Z" p-id="9776" fill="#d4237a"></path>
+							</svg>
+							<div>学习</div>
+						</div>
+					</div>
+				</div>
+				<div class="center-public">
+					<div class="public-questbank-btn">
+						<svg t="1591404147552" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9665" width="18" height="18">
+							<path d="M899.6 311.2c12.8 18.3 15.7 38.9 8.7 61.9L776.1 808.5c-6.1 20.5-18.4 37.7-36.8 51.6C721 874 701.4 881 680.5 881H237.2c-24.7 0-48.4-8.6-71.3-25.7-22.9-17.2-38.8-38.2-47.8-63.2-7.7-21.4-8-41.8-1-61 0-1.3 0.5-5.6 1.4-12.9 1-7.4 1.6-13.2 1.9-17.8 0.3-2.5-0.2-6-1.4-10.3-1.3-4.3-1.7-7.5-1.4-9.4 0.6-3.5 1.9-6.9 3.8-10.1s4.5-7 7.9-11.3c3.3-4.3 6-8.1 7.9-11.3 7.4-12.1 14.6-26.8 21.6-44s11.8-31.8 14.4-44c1-3.2 1-8 0.2-14.4s-0.9-10.9-0.2-13.4c1-3.5 3.6-8 8.2-13.4 4.4-5.5 7.2-9.1 8.2-11 6.8-11.5 13.4-26.3 20.2-44.2 6.8-17.9 10.7-32.3 12-43.2 0.3-2.9-0.1-8-1.2-15.4-1.1-7.4-1-11.8 0.2-13.4 1.3-4.1 4.9-9.1 10.6-14.7 5.8-5.6 9.3-9.2 10.6-10.8 6.1-8.3 12.9-21.8 20.4-40.6 7.5-18.7 11.9-34.2 13.2-46.4 0.3-2.5-0.2-6.7-1.4-12.2-1.3-5.6-1.6-9.8-1-12.7 0.6-2.5 2.1-5.5 4.3-8.7 2.2-3.2 5.2-6.9 8.7-11 3.5-4.1 6.3-7.5 8.2-10.1 2.5-3.8 5.2-8.7 7.9-14.7s5.2-11.5 7.2-16.8c2.1-5.3 4.6-11 7.7-17.3 3-6.3 6.2-11.3 9.4-15.4 3.2-4 7.5-7.8 12.7-11.3s11-5.4 17.3-5.6c6.3-0.2 13.8 0.7 22.8 2.6l-0.5 1.4c12.1-2.9 20.3-4.3 24.5-4.3H769c23.7 0 41.9 9 54.8 26.9 12.8 18 15.7 38.8 8.7 62.4L700.8 667.7c-11.5 38.1-22.9 62.6-34.4 73.8-11.4 11-31.9 16.6-61.7 16.6H187.1c-8.7 0-14.8 2.4-18.3 7.2-3.5 5.2-3.6 12-0.5 20.6 7.7 22.4 30.7 33.6 69.2 33.6H681c9.3 0 18.3-2.5 26.9-7.5 8.7-5 14.2-11.6 16.8-19.9l144.1-474.2c2.2-7.1 3-16.2 2.4-27.4 12.2 4.9 21.7 11.7 28.4 20.7z m-551 124c-1.3 4.1-1 7.8 1 10.8 1.9 3 5.2 4.5 9.6 4.5h292.1c4.1 0 8.3-1.5 12.2-4.5 4-3 6.7-6.7 7.9-10.8l10.1-30.7c1.3-4.1 1-7.8-1-10.8-1.9-3-5.2-4.5-9.6-4.5H378.8c-4.1 0-8.3 1.5-12.2 4.5-4 3-6.7 6.7-7.9 10.8l-10.1 30.7z m39.8-123.1c-1.3 4.1-1 7.8 1 10.8 1.9 3 5.2 4.5 9.6 4.5h292.1c4.1 0 8.3-1.5 12.2-4.5 4-3 6.7-6.7 7.9-10.8l10.1-30.7c1.3-4.1 1-7.8-1-10.8-1.9-3-5.2-4.5-9.6-4.5h-292c-4.1 0-8.3 1.5-12.2 4.5-4 3-6.7 6.7-7.9 10.8l-10.2 30.7z" p-id="9666" fill="#ffffff"></path>
+						</svg>
+						<span>公共题库</span>
+					</div>
+				</div>
+				<div class="left-mold">
+					<div class="mold-top">
+						系统数据
+					</div>
+					<div class="left-bottom-mold">
+						<div>
+							<div>题量</div>
+							<div class="left-mold-staticnum">
+								<div class="left-mold-num">123</div>
+							</div>
+						</div>
+						<div>
+							<div>学生</div>
+							<div class="left-mold-staticnum">
+								<div class="left-mold-num">123</div>
+							</div>
+						</div>
+						<div>
+							<div>学校</div>
+							<div class="left-mold-staticnum">
+								<div class="left-mold-num">123</div>
+							</div>
+						</div>
+						<div>
+							<div>教师</div>
+							<div class="left-mold-staticnum">
+								<div class="left-mold-num">123</div>
+							</div>
+						</div>
+						<div>
+							<div>活跃</div>
+							<div class="left-mold-staticnum">
+								<div class="left-mold-num">123</div>
+							</div>
+						</div>
+						<div>
+							<div>提交</div>
+							<div class="left-mold-staticnum">
+								<div class="left-mold-num">123</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="left-mold">
+					<div class="mold-top">
+						友情连接
+					</div>
+					<div class="left-bottom-mold" style="padding-bottom: 0px;">
+						<div class="btn-bottom-modal-skip">
+							<div>
+								<img src="img/gznc.jpg" width="20" height="20"  />
+							</div>
+							<div>Gznc</div>
+						</div>
+						<div class="btn-bottom-modal-skip">
+							<div>
+								<img src="img/mysql.png" width="20" height="20"  />
+							</div>
+							<div>Mysql</div>
+						</div>
+						<div class="btn-bottom-modal-skip">
+							<div>
+								<img src="img/runoob.png" width="20" height="20"  />
+							</div>
+							<div>Runoob</div>
+						</div>
+						<div class="btn-bottom-modal-skip">
+							<div>
+								<img src="img/zgdxmooc.png" width="20" height="20"  />
+							</div>
+							<div>Mooc</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="main-center">
+				<nav class="navbar">
+					<form class="navbar-form navbar-right form-inline" onsubmit="return false;">
+						<div class="form-group">
+							<label><span id="available-problems">题数: <b>114</b>  </span></label>
+							<input type="text" class="form-control input-sm" name="wd" id="search-text" value="">
+							<input type="hidden" name="who" autocomplete="off" value="">
+							<button type="submit" class="btn btn-success btn-sm">查找</button>
+							<a href="#" class="btn btn-info btn-sm" data-toggle="modal" data-target="#kp-modal">条件查找</a>
+						</div>
+					</form>
+				</nav>
+				<div class="table-responsive">
+					<table class="table table-striped table-hover table-topic-list">
+						<thead>
+							<tr>
+								<th></th>
+								<th>标号</th>
+								<th>标题</th>
+								<th>题型</th>
+								<th>知识点</th>
+								<th>作者</th>
+								<th>难度</th>
+								<th>分数</th>
+								<th>状态</th>
+								<th>更新时间</th>
+							</tr>
+						</thead>
+						<tbody class="data-tbody">
+						</tbody>
+					</table>
+				</div>
+				<div class="init-page">
+					<div class="page-num">
+						<span>当前显示1 - 50项，共300项</span>
+					</div>
+					<ul class="pagination pull-right">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="left-header-z-index">
+			<div class="left-z-index">
+
+			</div>
+			<div class="left-header-fork">
+				<span class="fork-btn">
+					<svg t="1591676213703" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3797" width="18" height="18"><path d="M936.1 935.7c-31.8 31.8-83.6 31.8-115.6 0L88.7 204.2c-31.8-31.9-31.9-83.6 0-115.5 31.8-31.9 83.6-31.9 115.7 0l731.7 731.4c31.8 32 32 83.7 0 115.6z m-0.8-731.9L203.4 935.2c-31.9 32-83.6 32-115.6 0-31.8-31.8-31.8-83.4 0.1-115.5L819.7 88.4c31.9-31.9 83.7-31.9 115.5-0.1 32 31.9 31.8 83.6 0.1 115.5z" fill="#ffffff" p-id="3798"></path><path d="M512.1 395.8L628 511.6 512.1 627.4l-116-115.8 116-115.8z" fill="#ffffff" p-id="3799"></path></svg>
+				</span>
+			</div>
+		</div>
+		<div class="modal fade" id="problem-modal" tabindex="-1" role="dialog" style="z-index: 9999;">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title" id="problem-modalLabel">查看</h4>
+					</div>
+					<div class="modal-body">
+						<table class="table table-condensed">
+							<thead>
+								<tr>
+									<th>作者</th>
+									<th>难度</th>
+									<th>分数</th>
+									<th>通过数</th>
+									<th>提交数</th>
+									<th>通过率</th>
+								</tr>
+							</thead>
+							<tbody id="topic-tbody">
+							</tbody>
+						</table>
+						<div class="topic-text grow">
+							<div class="tab-pc-text">
+								<div class="pc-text-raw topic-tab-text"></div>
+							</div>
+							<div class="gap-12">
+								<div id="title-text"></div>
+								<div class="form-check"></div>
+								<div class="judege-form-check">
+									<label class="radio-inline">
+										<input type="radio" data-id="1" autocomplete="off" name="cbx-ans" value="1"> T
+									</label>
+									<label class="radio-inline">
+										<input type="radio" data-id="0" autocomplete="off" name="cbx-ans" value="0"> F
+									</label>
+								</div>
+								<div class="textarea-raw">
+									<textarea name="content" style="width:100%;height:400px;"></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="answer-text grow">
+							<div class="tab-pc-text">
+								<div class="pc-text-raw answer-tab-text"></div>
+							</div>
+							<div class="gap-12">
+								<div id="answer-show"></div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" id="submit-btn">提交</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

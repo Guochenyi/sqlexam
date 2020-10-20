@@ -1,0 +1,411 @@
+body,
+html {
+	margin: 0;
+	padding: 0;
+	font-family: -apple-system, "PingFang SC", "Lantinghei SC", "Helvetica Neue", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans-serif;
+	background-color: #FFFFFF;
+	width: 100%;
+	overflow: hidden;
+	-webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+.theme-all {
+	height: 100vh;
+}
+
+.nav-top-header {
+	position: relative;
+	margin: 0;
+	height: 58px;
+	z-index: 2;
+	display: none;
+}
+
+.top-header {
+	height: 58px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 0px 24px;
+	background-color: #FFFFFF;
+}
+
+.top-header-left,
+.top-header-right {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 12px 0px;
+}
+
+.navbar-show-hide {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	text-align: center;
+	cursor: pointer;
+	display: none;
+}
+
+.left-show-svg {
+	margin-top: 4px;
+}
+
+.top-header-infrom {
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin-right: 12px;
+}
+
+.infrom-icon:hover,
+.infrom-icon:hover .infrom-path {
+	cursor: pointer;
+	fill: #404040;
+}
+
+.infrom-radius {
+	position: absolute;
+	background-color: #E17572;
+	min-height: 8px;
+	min-width: 8px;
+	right: -12%;
+	top: 4px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	padding: 2px;
+}
+
+.logo-img {
+	width: auto;
+	height: 34px;
+}
+
+@media screen and (max-width: 820px) {
+	.logo-img {
+		position: absolute;
+		clip: rect(0px 110px 200px 0px);
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.top-header-center {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.left-header {
+		display: none;
+	}
+	.navbar-show-hide {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.top-header-btn>a:nth-child(1) {
+		display: none;
+	}
+	.top-header {
+		padding: 0px 8px;
+	}
+}
+
+.top-header-center {
+	height: 58px;
+	background-color: red;
+}
+
+.tobar-links {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 0;
+	padding-left: 0;
+	height: 100%;
+}
+
+.tobar-links>li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #90a4ae;
+	width: 90px;
+	height: 100%;
+	position: relative;
+	text-align: center;
+	list-style-type: none;
+}
+
+.tobar-links>li:nth-child(1) {
+	background-color: #F9F9F9;
+}
+
+.tobar-links>li:nth-child(2) {
+	background-color: #F4F4F4;
+}
+
+.tobar-links>li:nth-child(3) {
+	background-color: #F9F9F9;
+}
+
+.tobar-links>li:nth-child(4) {
+	background-color: #F4F4F4;
+}
+
+.top-header-right>a {
+	font-size: 14px;
+	margin-left: 12px;
+}
+
+.top-header-right>a:nth-child(4) {
+	font-size: 14px;
+	margin-left: 0px;
+	color: #0080C0;
+}
+
+.topbar-bottom-colors {
+	width: 100%;
+}
+
+.topbar-bottom-colors>i {
+	float: left;
+	height: 2px;
+	width: 14.285%;
+}
+
+.topbar-bottom-colors>i:nth-child(1) {
+	background-color: #9857b2;
+}
+
+.topbar-bottom-colors>i:nth-child(2) {
+	background-color: #e17c21;
+}
+
+.topbar-bottom-colors>i:nth-child(3) {
+	background-color: #2c81ba;
+}
+
+.topbar-bottom-colors>i:nth-child(4) {
+	background-color: #5dc12e;
+}
+
+.topbar-bottom-colors>i:nth-child(5) {
+	background-color: #feb506;
+}
+
+.topbar-bottom-colors>i:nth-child(6) {
+	background-color: #2c3e50;
+}
+
+.topbar-bottom-colors>i:nth-child(7) {
+	background-color: #bc382a;
+}
+
+.main-window {
+	display: flex;
+	flex-direction: row;
+	padding-right: 1px;
+}
+
+.main-right {
+	width: 50px;
+	background-color: red;
+	height: 100%;
+}
+
+.left-header {
+	width: 265px;
+	height: 100%;
+	overflow-y: auto;
+	background-color: #FFFFFF;
+}
+
+.left-header>a{
+	color: #666666;
+	text-decoration: none;
+}
+
+.probsets-active{
+	height: 42px;
+    display: flex;
+    align-items: center;
+    color: inherit;
+    padding-left: 8px;
+    text-decoration: none;
+}
+
+.probsets-active:hover .probsets-path{
+	fill: #000000;
+}
+
+.probsets-active:hover{
+	color: #000000;
+}
+
+.item_arrange{
+	
+}
+
+.upload-page {
+	text-align: center;
+	padding-top: 20px;
+}
+
+.upload-page>svg {
+	-webkit-animation: animal 0.8s infinite linear;
+	-webkit-transform-origin: center center;
+	-ms-transform-origin: center center;
+	transform-origin: center center;
+}
+
+@-webkit-keyframes animal {
+	0% {
+		transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+.main-center {
+	padding: 4px 15px;
+	min-height: 20px;
+	width: 100%;
+	background-color: #FFFFFF;
+	overflow-y: auto;
+}
+
+.table-topic-list {
+	font-size: 13px;
+}
+
+a {
+	color: #0a4991;
+	text-decoration: none;
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
+	cursor: pointer;
+}
+
+th:nth-child(3) {
+	min-width: 80px;
+}
+
+td:nth-child(4) {
+	max-width: 260px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+th:nth-child(5) {
+	min-width: 65px;
+}
+
+th:nth-child(6) {
+	min-width: 180px
+}
+
+td:nth-child(6) {
+	max-width: 260px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+th:nth-child(7) {
+	min-width: 50px
+}
+
+th:nth-child(8) {
+	min-width: 60px
+}
+
+th:nth-child(9) {
+	min-width: 120px
+}
+
+.main-center .navbar {
+	background-color: #fff;
+	border: 0;
+	border-bottom: 1px solid #DDDDDD;
+	border-radius: 0;
+	margin-top: 3px;
+	margin-bottom: 12px;
+}
+
+.table>tr {
+	background-color: #FCFCFC;
+}
+
+label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: 700;
+}
+
+#available-problems {
+	padding-right: 12px;
+	font-size: 13px;
+}
+
+.left-header-z-index {
+	position: absolute;
+	bottom: 0;
+	z-index: 9999;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.65);
+	display: none;
+}
+
+.left-z-index {
+	float: left;
+	padding: 8px;
+	width: 230px;
+	height: 100%;
+	background-color: #E7E9F5;
+	overflow-y: auto;
+	display: none;
+}
+
+.left-header-fork {
+	float: left;
+	padding: 20px;
+	display: none;
+}
+
+.fork-btn {
+	cursor: pointer;
+}
+
+.init-page {
+	margin-top: 24px;
+	margin-bottom: 20px;
+	height: 34px;
+}
+
+.page-num {
+	float: left;
+	margin-top: 5px;
+	color: #212529;
+}
+
+.table {
+	margin-bottom: 0px;
+}
+
+.pagination {
+	float: left;
+	margin-top: 0px;
+}

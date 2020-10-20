@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>题库 | SQL语言题</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9">
+		<link rel="icon" class="ico-class" type="image/x-icon" />
+		<link href="../bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="../layui/css/layui.css" />
+		<link rel="stylesheet" href="../css/toastr.css" />
+		<link rel="stylesheet" href="../css/probsets.css" />
+		<script src="../js/jquery.min.js"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../layui/layui.js"></script>
+		<script type="text/javascript" src="../js/toastr.js"></script>
+		<script type="text/javascript" src="../ace/ace.js"></script>
+		<script type="text/javascript" src="../ace/ext-language_tools.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/addtopic.js"></script>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top navbar navbar-light nav-top-header">
+			<div class="top-header">
+				<div class="top-header-left">
+					<div class="navbar-show-hide">
+						<svg class="left-show-svg" width="20" height="25" viewBox="0 0 12 16">
+							<path fill="#545F7E" fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"></path>
+						</svg>
+					</div>
+					<div>
+						<img src="../img/logo.png" class="logo-img" />
+					</div>
+				</div>
+				<div class="top-header-right pull-right">
+					<div class="top-header-infrom">
+						<svg t="1591932064567" class="infrom-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="32242" width="20" height="20">
+							<path class="infrom-path" d="M767.962138 319.095525c-12.094456-20.280906-28.183899-41.467437-49.55565-62.282508-32.265868-31.447223-75.29487-55.636135-132.644019-66.070788 11.330046-13.207813 18.381649-29.755698 18.381649-47.995108 0-42.646286-43.398416-83.907015-106.664321-77.215615-45.321208 4.802376-82.564437 34.56933-82.564438 77.215615 0 18.23941 7.030114 34.754548 18.316158 47.962362-58.96495 9.834996-248.28069 58.233286-224.769206 388.881938 10.457166 147.226133-120.417557 223.525889-120.417557 223.525889s-11.155061 44.686758 72.238254 44.686759h698.451506c75.774801 0 77.718059-44.817742 77.718059-44.817742-137.926326-95.618754-125.876895-223.394906-125.876895-223.394906s7.117095-60.842717-4.67037-134.772496c-0.655939-4.093225-0.39295-26.317389-8.862855-57.611116-2.839675-10.544147-22.138206-56.486502-29.080315-68.112284zM498.635109 959.184809c-72.019267 0-98.565876-67.054185-98.565876-67.054186h201.213721c0.001023 0-29.579689 67.054185-102.647845 67.054186z" p-id="32243" fill="#8a8a8a"></path>
+						</svg>
+						<div class="infrom-radius"></div>
+					</div>
+					<div class="dropdown user-right-btn">
+						<div href="#" class="dropdown-toggle user-table" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							<svg t="1594349878674" class="icon user-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="19220" width="30" height="30">
+								<path d="M512 66c-246.2 0-445.7 199.5-445.7 445.6S265.8 957.2 512 957.2s445.6-199.5 445.6-445.6S758.1 66 512 66z m4 217.2c74 0 134.3 60.2 134.3 134.2S590 551.6 516 551.6s-134.2-60.2-134.2-134.2S442 283.2 516 283.2z m99.6 436.3H416.3c-48.3 0-82.1-2.8-101.1-5.4 5.2-70.3 43-130.9 97.3-165.5 28.7 22.5 64.3 36.6 103.5 36.6 39.3 0 74.9-14 103.5-36.6 54.3 34.6 92.1 95.2 97.2 165.5-19 2.6-52.8 5.4-101.1 5.4z" fill="#8a8a8a" p-id="19221" data-spm-anchor-id="a313x.7781069.0.i35" class="selected"></path>
+							</svg>
+							<span id="header-bar-nick-name">郭臣义</span>
+						</div>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li>
+								<a href="#">
+									<div>
+										<svg t="1593176425970" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10880" width="18" height="18">
+											<path d="M857.658125 560.13125c-2.3446875 2.814375-6.0965625 4.69125-9.849375 5.16h-1.4071875c-3.751875 0-7.035-0.9375-9.8484375-3.283125L512 291.3903125 187.446875 562.008125c-3.283125 2.345625-7.035 3.751875-11.2565625 3.283125-3.751875-0.46875-7.50375-2.345625-9.849375-5.16l-29.0784375-34.70625c-5.1590625-6.0975-4.220625-15.9459375 1.8759375-21.105l337.2159375-280.9359375c19.69875-16.415625 51.590625-16.415625 71.289375 0L662.0825 319.0625v-91.456875c0-8.4421875 6.56625-15.0084375 15.0084375-15.0084375h90.0496875c8.4421875 0 15.0084375 6.56625 15.0084375 15.0084375v191.355l102.7134375 85.359375c6.0965625 5.1590625 7.035 15.0075 1.8759375 21.105l-29.0803125 34.70625z m-75.51 222.7790625c0 16.415625-13.60125 30.016875-30.016875 30.016875H572.0328125V632.8278125h-120.065625v180.0984375H271.8678125c-16.415625 0-30.016875-13.60125-30.016875-30.016875V557.7875c0-0.939375 0.46875-1.876875 0.46875-2.814375L512 332.66375l269.679375 222.309375c0.46875 0.9375 0.46875 1.875 0.46875 2.814375v225.1228125z" fill="#333333" p-id="10881"></path>
+										</svg>
+										<span>个人中心</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div>
+										<svg t="1594350641149" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="24294" width="16" height="16">
+											<path d="M265.904 472.494l83.666 49.082 56.615 29.741a66734.382 66734.382 0 0 1 54.546 27.588c2.183 1.105 0.292-1.538 4.725 18.077 4.433 19.615 0.903 17.848-2.028 18.295-2.93 0.448-15.364-3.844-15.28-3.648 0.083 0.197-18.985-6.428-18.9-6.231 0.084 0.195-22.484-7.662-22.543-8.337-30.974-16.556-31.501-15.91-48.926-28.973-17.424-13.063-30.047-22.464-45.904-37.94-21.196-20.164-51.82-53.143-51.88-53.818" fill="#333333" p-id="24295"></path>
+											<path d="M456.058 607.066q-0.526 1.58-6.524-0.263t-16.471-5.998l-10.445-4.71q-22.995-10.444-45.464-25.6-3.657-2.603-21.416-16.47t-19.865-14.892q-34.99 53.802-70.01 94.556-42.305 49.62-54.856 57.46-2.077 1.053-10.181 2.077t-9.655 0q3.13-2.077 42.831-48.068 10.971-12.551 44.675-60.093t41.017-61.643q8.894-15.681 26.653-51.462t18.812-40.49q-4.184-0.527-57.46 17.231-4.184 1.054-14.365 3.92t-18.022 4.974-8.894 2.604q-1.053 1.053-1.053 5.5t-0.526 4.974q-2.604 5.237-16.209 7.84-12.024 3.658-24.546 0-9.39-2.077-14.628-10.97-2.077-3.13-2.604-12.025 3.13-1.053 12.815-2.604t15.418-3.13q30.31-8.367 54.856-16.706 52.251-18.285 53.275-18.285 5.237-1.053 22.47-10.181t22.995-11.234q4.71-1.58 11.234-4.184t7.578-2.867 3.13 0.263q1.053 6.26-0.527 17.232 0 1.053-6.524 14.102t-13.838 27.94-8.894 17.495q-13.048 26.126-40.227 68.43l33.44 14.629q6.26 3.13 38.91 16.705t35.255 14.628q2.077 0.527 5.5 13.312t2.34 15.945v0.058zM348.951 353.15q1.58 7.84-2.078 14.628-6.26 12.025-26.126 19.865-15.68 6.261-31.333 6.261-13.575-1.58-25.6-13.575-7.314-7.84-9.39-21.415l0.526-1.58q1.58 1.58 10.181 2.604t13.838 0 30.31-8.368q18.812-6.26 28.73-7.314 8.894 0 10.97 8.894h-0.028z m364.651 67.407l32.914 118.605L673.9 517.22l39.701-96.663zM134.735 838.513L497.31 717.304V178.138L134.735 299.874v538.64z m648.351-165.62l53.276 16.208-94.557-343.236-52.252-16.208L576.712 609.67l53.275 16.208 23.523-57.46 110.238 33.967 19.338 70.508z m-262.78-502.595l299.35 96.136V67.9l-299.35 102.398z m162.49 691.182l82.531 6.787-28.203 83.586-20.889-34.494q-67.904 43.358-144.204 56.436-30.31 6.26-47.542 6.26h-43.885q-41.28 0-104.24-20.362t-95.873-44.41q-4.184-3.658-4.184-8.368 0-4.184 2.604-7.051t6.787-2.867q2.078 0 9.392 3.92t15.944 8.63 10.708 5.735q38.15 19.339 83.322 32.124t82.299 12.814q49.618 0 87.242-7.577t82.035-26.39q7.84-3.657 15.945-8.104t17.758-9.918 14.892-8.63l-22.44-38.121z m234.05-563.683v563.712L512.494 732.986q-7.314 3.13-195.9 66.616T124.348 863.09q-6.787 0-9.39-6.788 0-0.526-0.528-1.58V291.536q1.58-4.71 2.078-5.237 2.603-3.13 10.444-5.734 55.383-18.285 77.851-26.126V53.828l291.511 103.45q1.053 0 83.849-28.73T745.258 71.85t84.375-27.94q10.444 0 10.444 10.971v218.37l76.77 24.546z" fill="#333333" p-id="24296"></path>
+										</svg>
+										<span>English</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div>
+										<svg t="1593176974148" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12529" width="16" height="16">
+											<path d="M433.6 808c0 1.49333333 0.21333333 5.01333333 0.53333333 10.88 0.32 5.86666667 0.42666667 10.66666667 0.21333334 14.4s-0.64 8.10666667-1.6 12.8-2.77333333 8.21333333-5.54666667 10.66666667-6.4 3.52-11.09333333 3.52H242.13333333c-43.2 0-80.10666667-15.36-110.82666666-45.97333334S85.33333333 746.77333333 85.33333333 703.57333333V320.42666667c0-43.2 15.36-80.10666667 45.97333334-110.82666667 30.72-30.72 67.52-45.97333333 110.82666666-45.97333333h174.18666667c4.69333333 0 8.85333333 1.70666667 12.26666667 5.12 3.41333333 3.41333333 5.12 7.57333333 5.12 12.26666666 0 1.49333333 0.21333333 5.01333333 0.53333333 10.88 0.32 5.86666667 0.42666667 10.66666667 0.21333333 14.4s-0.64 8.10666667-1.6 12.8-2.77333333 8.21333333-5.54666666 10.66666667-6.4 3.52-11.09333334 3.52H242.13333333c-23.89333333 0-44.37333333 8.53333333-61.44 25.49333333-17.06666667 17.06666667-25.49333333 37.54666667-25.49333333 61.44v383.04c0 23.89333333 8.42666667 44.37333333 25.49333333 61.44 17.06666667 17.06666667 37.54666667 25.49333333 61.44 25.49333334h169.81333334c1.17333333 0 3.2 0.21333333 6.29333333 0.53333333 3.09333333 0.32 5.12 0.96 6.29333333 1.6 1.17333333 0.64 2.56 1.70666667 4.37333334 2.98666667 1.81333333 1.28 3.09333333 2.88 3.73333333 4.90666666 0.64 2.45333333 0.96 4.90666667 0.96 7.78666667zM938.66666667 511.89333333c0 9.38666667-3.41333333 17.6-10.34666667 24.53333334L632.32 832.53333333c-6.82666667 6.82666667-15.14666667 10.34666667-24.53333333 10.34666667s-17.6-3.41333333-24.53333334-10.34666667c-6.82666667-6.82666667-10.34666667-15.04-10.34666666-24.53333333V651.30666667H329.17333333c-9.38666667 0-17.6-3.41333333-24.53333333-10.34666667-6.82666667-6.82666667-10.34666667-15.04-10.34666667-24.53333333V407.57333333c0-9.38666667 3.41333333-17.6 10.34666667-24.53333333s15.04-10.34666667 24.53333333-10.34666667h243.73333334v-156.8c0-9.38666667 3.41333333-17.6 10.34666666-24.53333333 6.82666667-6.82666667 15.14666667-10.34666667 24.53333334-10.34666667s17.6 3.41333333 24.53333333 10.34666667L928.42666667 487.46666667c6.82666667 6.93333333 10.24 15.04 10.24 24.42666666z" fill="#333333" p-id="12530"></path>
+										</svg>
+										<span>注销</span>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="topbar-bottom-colors"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+		</nav>
+		<div class="upload-page">
+			<svg t="1591853480900" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3782" width="20" height="20">
+				<path d="M714.7 303.2a32.3 32.3 0 1 0 64.6 0 32.3 32.3 0 1 0-64.6 0zM789 493.9a45.4 45.4 0 1 0 90.8 0 45.4 45.4 0 1 0-90.8 0zM732.1 720.6a57 57 0 1 0 114 0 57 57 0 1 0-114 0zM513 854a64.5 64.5 0 1 0 129 0 64.5 64.5 0 1 0-129 0zM263.3 812.8a77.1 77.1 0 1 0 154.2 0 77.1 77.1 0 1 0-154.2 0zM97.4 595.6a87.1 87.1 0 1 0 174.2 0 87.1 87.1 0 1 0-174.2 0zM146.8 335.5a96.8 96.8 0 1 0 193.6 0 96.8 96.8 0 1 0-193.6 0zM410 206.4a101.3 101.3 0 1 0 202.6 0 101.3 101.3 0 1 0-202.6 0z" fill="#707070" p-id="3783"></path>
+			</svg>
+		</div>
+		<div class="main-window main-window-hide">
+			<div class="left-header">
+				<div class="left-right-border">
+					<div class="left-list">
+						<svg t="1592664831030" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1666" width="12" height="12">
+							<path d="M211.534802 512 704.372481 23.272727 798.246325 116.363636 399.282489 512 798.246325 907.636364 704.372481 1000.727272 211.534802 512Z" p-id="1667" fill="#333333"></path>
+						</svg>
+						<span>公共题库</span>
+					</div>
+					<div class="left-list">
+						<svg t="1592665319046" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4367" width="16" height="16">
+							<path d="M916.992 573.44h-537.6c-21.504 0-40.448-14.336-45.056-34.816-6.656-30.208 15.36-57.344 43.52-57.344h537.6c21.504 0 40.448 14.336 45.056 34.816 7.168 30.208-15.36 57.344-43.52 57.344zM916.992 261.12h-537.6c-21.504 0-40.448-14.336-45.056-34.816-6.656-30.208 15.36-57.344 43.52-57.344h537.6c21.504 0 40.448 14.336 45.056 34.816 7.168 30.208-15.36 57.344-43.52 57.344zM377.856 793.6h537.6c21.504 0 40.448 14.336 45.056 34.816 6.656 30.208-15.36 57.344-43.52 57.344h-537.6c-21.504 0-40.448-14.336-45.056-34.816-7.168-30.208 15.36-57.344 43.52-57.344zM16.384 823.296l51.712-51.712 74.24 74.24 112.64-112.64 49.664 49.664-163.328 163.328-124.928-122.88zM78.2848 390.10304l210.14016 221.94176-44.61056 42.24L33.66912 432.34304z" fill="#333333" p-id="4368"></path>
+							<path d="M292.69504 440.5248l-221.94688 210.14528-42.24-44.61568 221.94688-210.14016zM78.7456 77.8752l210.14528 221.94176-44.61056 42.24L34.13504 120.11008z" fill="#333333" p-id="4369"></path>
+							<path d="M293.00736 128.26112L71.0656 338.4064l-42.24-44.61056 221.94176-210.14528z" fill="#333333" p-id="4370"></path>
+						</svg>
+						<span>判断题</span>
+					</div>
+					<div class="left-list">
+						<svg t="1592665646987" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7454" width="16" height="16">
+							<path d="M916.992 573.44h-537.6c-21.504 0-40.448-14.336-45.056-34.816-6.656-30.208 15.36-57.344 43.52-57.344h537.6c21.504 0 40.448 14.336 45.056 34.816 7.168 30.208-15.36 57.344-43.52 57.344zM916.992 261.12h-537.6c-21.504 0-40.448-14.336-45.056-34.816-6.656-30.208 15.36-57.344 43.52-57.344h537.6c21.504 0 40.448 14.336 45.056 34.816 7.168 30.208-15.36 57.344-43.52 57.344z" fill="#333333" p-id="7455"></path>
+							<path d="M89.871566 590.736551a90.112 89.6 44.999 1 0 126.711324-126.715746 90.112 89.6 44.999 1 0-126.711324 126.715746Z" fill="#333333" p-id="7456"></path>
+							<path d="M377.856 793.6h537.6c21.504 0 40.448 14.336 45.056 34.816 6.656 30.208-15.36 57.344-43.52 57.344h-537.6c-21.504 0-40.448-14.336-45.056-34.816-7.168-30.208 15.36-57.344 43.52-57.344zM162.304 302.08c-56.832 5.632-104.448-41.984-98.816-98.816 4.096-41.984 38.4-76.288 80.384-80.384 56.832-5.632 104.448 41.984 98.816 98.816-4.096 41.984-38.4 76.288-80.384 80.384zM153.6 159.232c-29.696 0-53.76 24.064-53.76 53.76S123.904 266.24 153.6 266.24s53.76-24.064 53.76-53.76S183.296 159.232 153.6 159.232zM162.816 931.328c-56.832 5.632-104.448-41.984-98.816-98.816 4.096-41.984 38.4-76.288 80.384-80.384 56.832-5.632 104.448 41.984 98.816 98.816-4.096 41.984-38.4 76.288-80.384 80.384z m-8.704-143.36c-29.696 0-53.76 24.064-53.76 53.76s24.064 53.76 53.76 53.76 53.76-24.064 53.76-53.76-24.064-53.76-53.76-53.76z" fill="#333333" p-id="7457"></path>
+						</svg>
+						<span>单选题</span>
+					</div>
+					<div class="left-list">
+						<svg t="1592665738290" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9010" width="16" height="16">
+							<path d="M916.992 573.44h-537.6c-21.504 0-40.448-14.336-45.056-34.816-6.656-30.208 15.36-57.344 43.52-57.344h537.6c21.504 0 40.448 14.336 45.056 34.816 7.168 30.208-15.36 57.344-43.52 57.344zM916.992 261.12h-537.6c-21.504 0-40.448-14.336-45.056-34.816-6.656-30.208 15.36-57.344 43.52-57.344h537.6c21.504 0 40.448 14.336 45.056 34.816 7.168 30.208-15.36 57.344-43.52 57.344zM377.856 793.6h537.6c21.504 0 40.448 14.336 45.056 34.816 6.656 30.208-15.36 57.344-43.52 57.344h-537.6c-21.504 0-40.448-14.336-45.056-34.816-7.168-30.208 15.36-57.344 43.52-57.344zM63.488 122.88h179.712v179.712H63.488zM63.488 437.248h179.712v179.712H63.488zM243.2 934.912H63.488v-179.712h179.712v179.712z m-25.6-152.576H88.576V911.36h129.024v-129.024z" fill="#333333" p-id="9011"></path>
+						</svg>
+						<span>多选题</span>
+					</div>
+					<div class="left-list">
+						<svg t="1592665835502" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12842" width="16" height="16">
+							<path d="M265.6 312.32h492.16v93.44H265.6V312.32z m0 280.32h305.28v93.44H265.6V592.64z m0 0" fill="#333333" p-id="12843"></path>
+							<path d="M898.56 31.36v867.2H125.44V125.44h586.24V31.36H32V992h960V31.36h-93.44z m0 0" fill="#333333" p-id="12844"></path>
+						</svg>
+						<span>填空题</span>
+					</div>
+					<div class="left-list">
+						<svg t="1592665941795" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="13949" width="16" height="16">
+							<path d="M394.971429 307.2h80.457142v409.6H394.971429v51.2h234.057142v-51.2H548.571429V307.2h80.457142v-51.2H394.971429z" p-id="13950" fill="#333333"></path>
+							<path d="M914.285714 1024h-804.571428C51.2 1024 0 972.8 0 914.285714v-804.571428C0 51.2 51.2 0 109.714286 0h804.571428c58.514286 0 109.714286 51.2 109.714286 109.714286v804.571428c0 58.514286-51.2 109.714286-109.714286 109.714286zM109.714286 73.142857c-21.942857 0-36.571429 14.628571-36.571429 36.571429v804.571428c0 21.942857 14.628571 36.571429 36.571429 36.571429h804.571428c21.942857 0 36.571429-14.628571 36.571429-36.571429v-804.571428c0-21.942857-14.628571-36.571429-36.571429-36.571429h-804.571428z" p-id="13951" fill="#333333"></path>
+						</svg>
+						<span>主观题</span>
+					</div>
+					<div class="left-list left-list-avtive">
+						<svg t="1592666023988" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15309" width="16" height="16">
+							<path d="M42.666667 260.266667v503.466666h85.333333V260.266667zM896 260.266667v503.466666h85.333333V260.266667z" p-id="15310" fill="#333333"></path>
+							<path d="M512 477.866667c257.066667 0 469.333333-87.04 469.333333-217.6C981.333333 129.706667 769.066667 42.666667 512 42.666667S42.666667 129.706667 42.666667 260.266667c0 130.56 212.266667 217.6 469.333333 217.6z m0-85.333334c-214.186667 0-384-69.632-384-132.266666C128 197.632 297.813333 128 512 128s384 69.632 384 132.266667c0 62.634667-169.813333 132.266667-384 132.266666z" p-id="15311" fill="#333333"></path>
+							<path d="M896 427.946667c0 62.506667-170.026667 132.266667-384 132.266666-214.314667 0-384-69.504-384-132.266666H42.666667c0 130.730667 212.138667 217.6 469.333333 217.6 256.853333 0 469.333333-87.168 469.333333-217.6h-85.333333z" p-id="15312" fill="#333333"></path>
+							<path d="M896 596.053333c0 62.506667-170.026667 132.266667-384 132.266667-214.314667 0-384-69.504-384-132.266667H42.666667c0 130.730667 212.138667 217.6 469.333333 217.6 256.853333 0 469.333333-87.168 469.333333-217.6h-85.333333z" p-id="15313" fill="#333333"></path>
+							<path d="M896 763.733333c0 62.506667-170.026667 132.266667-384 132.266667-214.314667 0-384-69.504-384-132.266667H42.666667C42.666667 894.464 254.805333 981.333333 512 981.333333c256.853333 0 469.333333-87.168 469.333333-217.6h-85.333333z" p-id="15314" fill="#333333"></path>
+						</svg>
+						<span>SQL语言题</span>
+					</div>
+				</div>
+			</div>
+			<div class="main-center">
+				<h2 class="nav-title-bar">SQL语言题</h2>
+				<div class="form-horizontal">
+					<div class="form-group">
+						<label for="title" class="col-sm-2 control-label">标题 <span class="required-star">*</span></label>
+						<div class="col-sm-10">
+							<input type="text" autocomplete="off" maxlength="200" class="form-control" id="title" name="title" placeholder="标题" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="status" class="col-sm-2 control-label">状态 <span class="required-star">*</span></label>
+						<div class="col-sm-10">
+							<label class="radio-inline">
+							  	<input type="radio" autocomplete="off" checked="true" name="status" value="2"> 私有
+							</label>
+							<label class="radio-inline">
+							  	<input type="radio" autocomplete="off" name="status" value="1"> 公开
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="kp_id" class="col-sm-2 control-label">知识点 <span class="required-star">*</span></label>
+						<div class="col-sm-10">
+							<table class="table table-hover table-bordered table-striped table-bottom hidden" id="knowpt_table">
+								<thead>
+									<tr>
+										<th>标号</th>
+										<th>知识点</th>
+										<th>状态</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody id="knowpt_tbody">
+								</tbody>
+							</table>
+							<button id="kp-btn" class="btn btn-primary btn-sm">添加知识点</button>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="kp_id" class="col-sm-2 control-label">数据库 <span class="required-star">*</span></label>
+						<div class="col-sm-10">
+							<table class="table table-bordered table-striped table-bottom sql-topic-hidden hidden">
+								<thead>
+									<tr>
+										<th>标号</th>
+										<th>数据库名</th>
+										<th>字符集</th>
+										<th>排序规则</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody id="database_tbody">
+								</tbody>
+							</table>
+							<button id="database-btn" class="btn btn-success btn-sm">新建数据库</button>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="kp_id" class="col-sm-2 control-label">数据表 <span class="required-star">*</span></label>
+						<div class="col-sm-10">
+							<table class="table table-bordered table-striped table-bottom bottom-10 sql-topic-hidden hidden">
+								<thead>
+									<tr>
+										<th>标号</th>
+										<th>数据表名</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody id="table-name-tbody">
+								</tbody>
+							</table>
+							<button id="add-datatable-btn" class="btn btn-success btn-sm">新建数据表</button>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="kp_id" class="col-sm-2 control-label">题目集 <span class="required-star">*</span></label>
+						<div class="col-sm-10">
+							<table class="table table-hover hidden" id="table-name-table">
+								<thead>
+									<tr>
+										<th>标号</th>
+										<th>数据表名</th>
+										<th>字符集</th>
+										<th>排序规则</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody id="knowpt_tbody">
+								</tbody>
+							</table>
+							<button id="kp-btn" class="btn btn-primary btn-sm">添加题目</button>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">描述 <span class="required-star">*</span></label>
+						<div class="col-sm-10">
+							<iframe id="editor-text" class="iframe-editor" src="../editormd/editormd.html" width="100%" height="580px" frameborder="1" name="describe-editor" scrolling="yes"></iframe>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="title" class="col-sm-2 control-label">&nbsp;</label>
+						<div class="col-sm-10">
+							<button type="button" id="save-btn" class="btn btn-primary">创建</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="left-header-z-index">
+			<div class="left-z-index"></div>
+			<div class="left-header-fork">
+				<span class="fork-btn">
+					<svg t="1591676213703" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3797" width="18" height="18"><path d="M936.1 935.7c-31.8 31.8-83.6 31.8-115.6 0L88.7 204.2c-31.8-31.9-31.9-83.6 0-115.5 31.8-31.9 83.6-31.9 115.7 0l731.7 731.4c31.8 32 32 83.7 0 115.6z m-0.8-731.9L203.4 935.2c-31.9 32-83.6 32-115.6 0-31.8-31.8-31.8-83.4 0.1-115.5L819.7 88.4c31.9-31.9 83.7-31.9 115.5-0.1 32 31.9 31.8 83.6 0.1 115.5z" fill="#ffffff" p-id="3798"></path><path d="M512.1 395.8L628 511.6 512.1 627.4l-116-115.8 116-115.8z" fill="#ffffff" p-id="3799"></path></svg>
+				</span>
+			</div>
+		</div>
+		<div class="modal fade in" id="kp-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+						<h4 class="modal-title" id="kp-modalLabel">添加知识点</h4>
+					</div>
+					<div class="modal-body">
+						<p>
+							<select class="form-control" id="one-kp">
+								<option value="">--选择知识点--</option>
+								<optgroup id="private" data-flag="2" label="私有">
+								</optgroup>
+								<optgroup id="public" data-flag="1" label="公开">
+								</optgroup>
+							</select>
+						</p>
+						<p>
+							<select class="form-control" id="two-kp">
+								<option value="">--选择下级知识点--</option>
+							</select>
+						</p>
+						<p>
+							<select class="form-control" id="three-kp">
+								<option value="">--选择下级知识点--</option>
+							</select>
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary disabled" id="selected-btn" disabled="disabled">确定</button>
+						<button type="button" class="btn btn-default" id="close-btn" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="database-modal" tabindex="-1" role="dialog" style="z-index: 9999;">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title" id="problem-modalLabel">新建数据库</h4>
+					</div>
+					<div class="modal-body" style="background-color: #F0F0F0;">
+						<div class="database-pc-style">
+							<div class="database-top-style">
+								<div class="top-btn database-btn top-btn-active">常规</div>
+								<div class="top-btn database-btn database-sql-preview">SQL预览</div>
+							</div>
+							<div class="database-center">
+								<div class="database-center-style">
+									<div class="form-horizontal">
+										<div class="form-group form-group-padding justify-content-center">
+											<label for="status" class="col-sm-3 text-left label-text">数据库名 ：</label>
+											<div class="col-sm-9">
+												<input style="text" class="form-control" name="database-name" />
+											</div>
+										</div>
+										<div class="form-group form-group-padding justify-content-center">
+											<label for="status" class="col-sm-3 text-left label-text">字符集 ：</label>
+											<div class="col-sm-9">
+												<select class="form-control" id="character-set" autocomplete="off"></select>
+											</div>
+										</div>
+										<div class="form-group form-group-padding justify-content-center">
+											<label for="status" class="col-sm-3 text-left label-text">排序规则 ：</label>
+											<div class="col-sm-9">
+												<select class="form-control" id="ordering-rule" autocomplete="off"></select>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="database-center-style database-center-preview hidden"></div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" id="database-submit-btn">确定</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="datatable-modal" tabindex="-1" role="dialog" style="z-index: 9999;">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h4 class="modal-title" id="problem-modalLabel">新建数据表</h4>
+						<span id="database-table-name"></span>
+					</div>
+					<div class="modal-body" style="background-color: #F0F0F0;">
+						<div class="datatable-pc-style">
+							<div class="top-event-item">
+								<span class="top-event-option" id="database-table-save-btn">
+									<svg t="1596361383512" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12202" width="20" height="20"><path d="M644.010593 573.566194 382.040113 573.566194l0 32.745798 261.97048 0L644.010593 573.566194zM644.010593 671.799496 382.040113 671.799496l0 32.745798 261.97048 0L644.010593 671.799496zM705.842847 180.612521 218.311121 180.612521l0 654.915967 589.42437 0L807.735491 346.588693 705.842847 180.612521zM709.498096 770.036891l-392.94958 0L316.548516 508.074597l392.94958 0L709.498096 770.036891zM709.498096 409.837202l-392.94958 0L316.548516 246.104117l196.478883 0 0 98.241488 130.983193 0 0-98.241488 65.487503 0L709.498096 409.837202z" p-id="12203" fill="#8a8a8a"></path></svg>
+									<span>保存</span>
+								</span>
+								<div>
+									<svg t="1596371547476" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="32837" width="16" height="24">
+										<path d="M522.70967467 1048.04898133l-17.59232 0 0-1073.73226666 17.59095466 0.00136533 0.00136534 1073.73090133z" fill="" p-id="32838"></path>
+									</svg>
+								</div>
+								<div class="table-top-event-btn">
+									<span class="top-event-option field-btn">
+										<svg t="1596367165663" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3600" width="14" height="14"><path d="M640 288 640 64 192 64C121.344 64 64 121.344 64 192l0 704c0 70.656 57.344 128 128 128l576 0c70.656 0 128-57.344 128-128L896 320l-224 0C654.336 320 640 305.664 640 288zM704 544C704 561.664 689.664 576 672 576L512 576l0 160C512 753.664 497.664 768 480 768S448 753.664 448 736L448 576 288 576C270.336 576 256 561.664 256 544S270.336 512 288 512L448 512 448 352C448 334.336 462.336 320 480 320S512 334.336 512 352L512 512l160 0C689.664 512 704 526.336 704 544zM704 64l0 192 192 0L704 64z" fill="#0ab116" p-id="3601"></path></svg>
+										<span>添加字段</span>
+									</span>
+									<span class="top-event-option field-btn">
+										<svg t="1596367984946" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4416" width="14" height="14"><path d="M613.888 412.16c121.856 0 243.2 0 365.056-0.512 10.752 0 13.312 3.072 12.8 13.312-0.512 57.856-0.512 115.712 0 174.08 0 8.192-2.048 10.752-10.752 10.752-207.36-0.512-414.72 0-622.08 0-37.888 0-75.264-0.512-113.152 0-9.216 0-11.264-2.56-11.264-11.264 0.512-58.368 0.512-116.736 0-175.104 0-10.24 3.072-11.776 12.288-11.776 122.88 0.512 245.248 0.512 367.104 0.512z" fill="#0D7D42" p-id="4417"></path><path d="M406.016 257.536h-343.04c-9.728 0-12.8-2.048-12.8-12.288 0.512-57.856 0.512-115.712 0-174.08 0-9.728 3.072-12.288 12.288-12.288h687.616c9.728 0 11.776 3.072 11.776 12.288-0.512 58.368-0.512 116.736 0 175.104 0 9.216-2.56 11.264-11.264 11.264-114.688-0.512-229.888 0-344.576 0z" fill="#FECD59" p-id="4418" data-spm-anchor-id="a313x.7781069.0.i4" class="selected"></path><path d="M407.04 961.536h-343.04c-11.264 0-13.824-3.072-13.824-13.824 0.512-57.344 0.512-115.2 0-172.544 0-8.704 2.048-11.776 11.264-11.776 229.376 0.512 459.264 0 688.64 0 8.192 0 11.776 1.024 11.776 10.752-0.512 58.88-0.512 117.248 0 176.128 0 9.728-3.072 11.264-11.776 11.264h-343.04z" fill="#4D82B7" p-id="4419"></path><path d="M178.688 655.36c-4.608-0.512-6.144-3.584-8.192-6.144-44.032-44.032-87.552-88.064-132.096-131.584-6.144-6.144-6.144-8.704 0-14.848 44.032-43.52 88.064-87.552 132.096-131.584 2.048-2.048 4.096-5.632 8.192-6.144V655.36z" fill="#0D7D42" p-id="4420"></path></svg>
+										<span>插入字段</span>
+									</span>
+									<span class="top-event-option field-btn">
+										<svg t="1596370016907" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7907" width="14" height="14"><path d="M512 892.032A380.032 380.032 0 1 0 512 131.968a380.032 380.032 0 0 0 0 760.064zM512 960A448 448 0 1 1 512 64a448 448 0 0 1 0 896z m224-481.984a16 16 0 0 1 16 16v35.968a16 16 0 0 1-16 16H280a16 16 0 0 1-16-16V494.08a16 16 0 0 1 16-16H736z" fill="#F54747" p-id="7908"></path></svg>
+										<span>删除字段</span>
+									</span>
+									<div>
+										<svg t="1596371547476" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="32837" width="16" height="24">
+											<path d="M522.70967467 1048.04898133l-17.59232 0 0-1073.73226666 17.59095466 0.00136533 0.00136534 1073.73090133z" fill="" p-id="32838"></path>
+										</svg>
+									</div>
+									<span class="top-event-option field-btn">
+										<svg t="1596360748576" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2671" width="16" height="16"><path d="M455.111111 204.8C381.155556 284.444444 364.088889 403.911111 409.6 500.622222L113.777778 790.755556V910.222222l68.266666-5.688889 56.888889-56.888889v-28.444444h79.644445V739.555556h73.955555l22.755556-22.755556 5.688889-79.644444 73.955555 5.688888 34.133334-34.133333c91.022222 45.511111 210.488889 28.444444 284.444444-45.511111 96.711111-96.711111 96.711111-256-5.688889-358.4C711.111111 113.777778 551.822222 108.088889 455.111111 204.8z m295.822222 170.666667c-28.444444 28.444444-73.955556 28.444444-102.4 0-22.755556-28.444444-22.755556-73.955556 0-102.4 28.444444-28.444444 73.955556-28.444444 102.4 0s28.444444 73.955556 0 102.4z" fill="#FDB51F" p-id="2672"></path></svg>
+										<span>主键</span>
+									</span>
+									<div>
+										<svg t="1596371547476" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="32837" width="16" height="24">
+											<path d="M522.70967467 1048.04898133l-17.59232 0 0-1073.73226666 17.59095466 0.00136533 0.00136534 1073.73090133z" fill="" p-id="32838"></path>
+										</svg>
+									</div>
+									<span class="top-event-option field-btn">
+										<svg t="1596370159010" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10581" width="14" height="14"><path d="M533.884 73.63c-23.153-9.502-50.698-4.712-69.4 14.09L148.53 407.19c-12.25 12.44-18.432 28.645-18.432 44.847 0 16.464 6.318 32.916 18.938 45.356 25.074 24.748 65.392 24.566 90.206-0.508l202.165-197.41v597.378c0 35.22 35.652 63.795 70.862 63.795s70.849-28.577 70.849-63.795V302.865l199.504 191.838c24.937 24.882 65.321 24.824 90.202-0.125 24.937-25.004 24.734-65.323-0.136-90.202L555.015 87.595c-0.067-0.058-0.135-0.058-0.19-0.125-0.07-0.057-0.07-0.124-0.126-0.19-5.943-5.867-12.837-10.08-20.034-13.141-0.26-0.124-0.52-0.443-0.78-0.509z" p-id="10582" fill="#707070"></path></svg>
+										<span>上移</span>
+									</span>
+									<span class="top-event-option field-btn">
+										<svg t="1596370644618" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="26361" width="14" height="14"><path d="M533.884426 955.899996c0.25992-0.066515 0.520863-0.384763 0.780783-0.508583 7.196912-3.060709 14.090926-7.274684 20.034289-13.141298 0.055259-0.066515 0.055259-0.13303 0.124843-0.190335 0.055259-0.066515 0.12382-0.066515 0.190335-0.124843l317.67313-316.780807c24.870434-24.879644 25.073048-65.197908 0.1361-90.202395-24.880667-24.949228-65.264423-25.006534-90.202395-0.124843l-199.503776 191.83819 0-593.988316c0-35.218106-35.638685-63.794955-70.848605-63.794955S441.407222 97.457636 441.407222 132.676765l0 597.377506L239.241826 532.645203c-24.814152-25.074072-65.131393-25.25622-90.205465-0.508583-12.620435 12.440333-18.938328 28.892027-18.938328 45.356001 0 16.202007 6.181793 32.407084 18.431791 44.847417l315.954999 319.469032C483.185744 960.612321 510.7311 965.402417 533.884426 955.899996L533.884426 955.899996 533.884426 955.899996 533.884426 955.899996z" fill="#707070" p-id="26362"></path></svg>
+										<span>下移</span>
+									</span>
+								</div>
+								<div class="table-top-event-btn hidden">
+									<span class="top-event-option index-event-btn">
+										<svg t="1596367165663" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3600" width="14" height="14"><path d="M640 288 640 64 192 64C121.344 64 64 121.344 64 192l0 704c0 70.656 57.344 128 128 128l576 0c70.656 0 128-57.344 128-128L896 320l-224 0C654.336 320 640 305.664 640 288zM704 544C704 561.664 689.664 576 672 576L512 576l0 160C512 753.664 497.664 768 480 768S448 753.664 448 736L448 576 288 576C270.336 576 256 561.664 256 544S270.336 512 288 512L448 512 448 352C448 334.336 462.336 320 480 320S512 334.336 512 352L512 512l160 0C689.664 512 704 526.336 704 544zM704 64l0 192 192 0L704 64z" fill="#0ab116" p-id="3601"></path></svg>
+										<span>添加索引</span>
+									</span>
+									<span class="top-event-option index-event-btn">
+										<svg t="1596370016907" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7907" width="14" height="14"><path d="M512 892.032A380.032 380.032 0 1 0 512 131.968a380.032 380.032 0 0 0 0 760.064zM512 960A448 448 0 1 1 512 64a448 448 0 0 1 0 896z m224-481.984a16 16 0 0 1 16 16v35.968a16 16 0 0 1-16 16H280a16 16 0 0 1-16-16V494.08a16 16 0 0 1 16-16H736z" fill="#F54747" p-id="7908"></path></svg>
+										<span>删除索引</span>
+									</span>
+								</div>
+								<div class="table-top-event-btn hidden">
+									<span class="top-event-option key-event-btn">
+										<svg t="1596367165663" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3600" width="14" height="14"><path d="M640 288 640 64 192 64C121.344 64 64 121.344 64 192l0 704c0 70.656 57.344 128 128 128l576 0c70.656 0 128-57.344 128-128L896 320l-224 0C654.336 320 640 305.664 640 288zM704 544C704 561.664 689.664 576 672 576L512 576l0 160C512 753.664 497.664 768 480 768S448 753.664 448 736L448 576 288 576C270.336 576 256 561.664 256 544S270.336 512 288 512L448 512 448 352C448 334.336 462.336 320 480 320S512 334.336 512 352L512 512l160 0C689.664 512 704 526.336 704 544zM704 64l0 192 192 0L704 64z" fill="#0ab116" p-id="3601"></path></svg>
+										<span>添加外键</span>
+									</span>
+									<span class="top-event-option key-event-btn">
+										<svg t="1596370016907" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7907" width="14" height="14"><path d="M512 892.032A380.032 380.032 0 1 0 512 131.968a380.032 380.032 0 0 0 0 760.064zM512 960A448 448 0 1 1 512 64a448 448 0 0 1 0 896z m224-481.984a16 16 0 0 1 16 16v35.968a16 16 0 0 1-16 16H280a16 16 0 0 1-16-16V494.08a16 16 0 0 1 16-16H736z" fill="#F54747" p-id="7908"></path></svg>
+										<span>删除外键</span>
+									</span>
+								</div>
+								<div class="table-top-event-btn hidden">
+									<span class="top-event-option trigger-event-btn">
+										<svg t="1596367165663" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3600" width="14" height="14"><path d="M640 288 640 64 192 64C121.344 64 64 121.344 64 192l0 704c0 70.656 57.344 128 128 128l576 0c70.656 0 128-57.344 128-128L896 320l-224 0C654.336 320 640 305.664 640 288zM704 544C704 561.664 689.664 576 672 576L512 576l0 160C512 753.664 497.664 768 480 768S448 753.664 448 736L448 576 288 576C270.336 576 256 561.664 256 544S270.336 512 288 512L448 512 448 352C448 334.336 462.336 320 480 320S512 334.336 512 352L512 512l160 0C689.664 512 704 526.336 704 544zM704 64l0 192 192 0L704 64z" fill="#0ab116" p-id="3601"></path></svg>
+										<span>添加触发器</span>
+									</span>
+									<span class="top-event-option trigger-event-btn">
+										<svg t="1596367984946" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4416" width="14" height="14"><path d="M613.888 412.16c121.856 0 243.2 0 365.056-0.512 10.752 0 13.312 3.072 12.8 13.312-0.512 57.856-0.512 115.712 0 174.08 0 8.192-2.048 10.752-10.752 10.752-207.36-0.512-414.72 0-622.08 0-37.888 0-75.264-0.512-113.152 0-9.216 0-11.264-2.56-11.264-11.264 0.512-58.368 0.512-116.736 0-175.104 0-10.24 3.072-11.776 12.288-11.776 122.88 0.512 245.248 0.512 367.104 0.512z" fill="#0D7D42" p-id="4417"></path><path d="M406.016 257.536h-343.04c-9.728 0-12.8-2.048-12.8-12.288 0.512-57.856 0.512-115.712 0-174.08 0-9.728 3.072-12.288 12.288-12.288h687.616c9.728 0 11.776 3.072 11.776 12.288-0.512 58.368-0.512 116.736 0 175.104 0 9.216-2.56 11.264-11.264 11.264-114.688-0.512-229.888 0-344.576 0z" fill="#FECD59" p-id="4418" data-spm-anchor-id="a313x.7781069.0.i4" class="selected"></path><path d="M407.04 961.536h-343.04c-11.264 0-13.824-3.072-13.824-13.824 0.512-57.344 0.512-115.2 0-172.544 0-8.704 2.048-11.776 11.264-11.776 229.376 0.512 459.264 0 688.64 0 8.192 0 11.776 1.024 11.776 10.752-0.512 58.88-0.512 117.248 0 176.128 0 9.728-3.072 11.264-11.776 11.264h-343.04z" fill="#4D82B7" p-id="4419"></path><path d="M178.688 655.36c-4.608-0.512-6.144-3.584-8.192-6.144-44.032-44.032-87.552-88.064-132.096-131.584-6.144-6.144-6.144-8.704 0-14.848 44.032-43.52 88.064-87.552 132.096-131.584 2.048-2.048 4.096-5.632 8.192-6.144V655.36z" fill="#0D7D42" p-id="4420"></path></svg>
+										<span>插入触发器</span>
+									</span>
+									<span class="top-event-option trigger-event-btn">
+										<svg t="1596370016907" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7907" width="14" height="14"><path d="M512 892.032A380.032 380.032 0 1 0 512 131.968a380.032 380.032 0 0 0 0 760.064zM512 960A448 448 0 1 1 512 64a448 448 0 0 1 0 896z m224-481.984a16 16 0 0 1 16 16v35.968a16 16 0 0 1-16 16H280a16 16 0 0 1-16-16V494.08a16 16 0 0 1 16-16H736z" fill="#F54747" p-id="7908"></path></svg>
+										<span>删除触发器</span>
+									</span>
+									<div>
+										<svg t="1596371547476" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="32837" width="16" height="24">
+											<path d="M522.70967467 1048.04898133l-17.59232 0 0-1073.73226666 17.59095466 0.00136533 0.00136534 1073.73090133z" fill="" p-id="32838"></path>
+										</svg>
+									</div>
+									<span class="top-event-option trigger-event-btn">
+										<svg t="1596370159010" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10581" width="14" height="14"><path d="M533.884 73.63c-23.153-9.502-50.698-4.712-69.4 14.09L148.53 407.19c-12.25 12.44-18.432 28.645-18.432 44.847 0 16.464 6.318 32.916 18.938 45.356 25.074 24.748 65.392 24.566 90.206-0.508l202.165-197.41v597.378c0 35.22 35.652 63.795 70.862 63.795s70.849-28.577 70.849-63.795V302.865l199.504 191.838c24.937 24.882 65.321 24.824 90.202-0.125 24.937-25.004 24.734-65.323-0.136-90.202L555.015 87.595c-0.067-0.058-0.135-0.058-0.19-0.125-0.07-0.057-0.07-0.124-0.126-0.19-5.943-5.867-12.837-10.08-20.034-13.141-0.26-0.124-0.52-0.443-0.78-0.509z" p-id="10582" fill="#707070"></path></svg>
+										<span>上移</span>
+									</span>
+									<span class="top-event-option trigger-event-btn">
+										<svg t="1596370644618" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="26361" width="14" height="14"><path d="M533.884426 955.899996c0.25992-0.066515 0.520863-0.384763 0.780783-0.508583 7.196912-3.060709 14.090926-7.274684 20.034289-13.141298 0.055259-0.066515 0.055259-0.13303 0.124843-0.190335 0.055259-0.066515 0.12382-0.066515 0.190335-0.124843l317.67313-316.780807c24.870434-24.879644 25.073048-65.197908 0.1361-90.202395-24.880667-24.949228-65.264423-25.006534-90.202395-0.124843l-199.503776 191.83819 0-593.988316c0-35.218106-35.638685-63.794955-70.848605-63.794955S441.407222 97.457636 441.407222 132.676765l0 597.377506L239.241826 532.645203c-24.814152-25.074072-65.131393-25.25622-90.205465-0.508583-12.620435 12.440333-18.938328 28.892027-18.938328 45.356001 0 16.202007 6.181793 32.407084 18.431791 44.847417l315.954999 319.469032C483.185744 960.612321 510.7311 965.402417 533.884426 955.899996L533.884426 955.899996 533.884426 955.899996 533.884426 955.899996z" fill="#707070" p-id="26362"></path></svg>
+										<span>下移</span>
+									</span>
+								</div>
+							</div>
+							<div class="database-top-style">
+								<div class="top-btn datatable-btn top-btn-active">字段</div>
+								<div class="top-btn datatable-btn">索引</div>
+								<div class="top-btn datatable-btn">外键</div>
+								<div class="top-btn datatable-btn">触发器</div>
+								<div class="top-btn datatable-btn">选项</div>
+								<div class="top-btn datatable-btn">注释</div>
+								<div class="top-btn datatable-btn table-sql-preview">SQL预览</div>
+							</div>
+							<div class="datatable-center">
+								<div class="datatable-center-style">
+									<div class="table-top-style">
+										<table class="table table-bordered table-bottom add-table table-field-th">
+											<thead>
+												<tr>
+													<th></th>
+													<th>名</th>
+													<th>类型</th>
+													<th>长度</th>
+													<th>小数点</th>
+													<th>不是null</th>
+													<th>键</th>
+													<th>注释</th>
+												</tr>
+											</thead>
+											<tbody id="database-table-tbody">
+											</tbody>
+										</table>
+									</div>
+									<div class="datatable-bottom">
+										<div class="form-horizontal">
+											<div class="table-bottom-0">
+												<div class="form-group">
+													<label for="kp_id" class="col-sm-2 label-nodefault">默认：</label>
+													<div class="col-sm-10">
+														<select class="col-sm-6 table-bottom-default table-bottom-select disabled" disabled="disabled">
+															<option></option>
+															<option value="EMPTY STRING">EMPTY STRING</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="table-bottom-1 hidden">
+												<div class="form-group">
+													<label for="kp_id" class="col-sm-2 label-nodefault">默认：</label>
+													<div class="col-sm-10">
+														<select class="col-sm-6 table-bottom-default disabled">
+															<option></option>
+															<option value="EMPTY STRING">EMPTY STRING</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="kp_id" class="col-sm-12 label-nodefault">
+														<span class="table-bottom-center">
+															<input type="checkbox" id="autoincrement"/><label for="autoincrement">自动递增</label>
+														</span>
+													</label>
+												</div>
+												<div class="form-group">
+													<label for="kp_id" class="col-sm-12 label-nodefault">
+														<span class="table-bottom-center">
+															<input type="checkbox" id="unsigned"/><label for="unsigned">无符号</label>
+														</span>
+													</label>
+												</div>
+												<div class="form-group">
+													<label for="kp_id" class="col-sm-12 label-nodefault">
+														<span class="table-bottom-center">
+															<input type="checkbox" id="zeropadding"/><label for="zeropadding">填充零</label>
+														</span>
+													</label>
+												</div>
+											</div>
+											<div class="table-bottom-2 hidden">
+												<div class="form-group">
+													<label for="kp_id" class="col-sm-2 label-nodefault">默认：</label>
+													<div class="col-sm-10">
+														<select class="col-sm-6 table-bottom-default disabled">
+															<option></option>
+															<option value="EMPTY STRING">EMPTY STRING</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="title" class="col-sm-2 label-nodefault">键长度：</label>
+													<div class="col-sm-10">
+														<input type="number" class="col-sm-6 key-length" name="title" value="">
+													</div>
+												</div>
+											</div>
+											<div class="table-bottom-3 hidden">
+												<div class="form-group">
+													<label for="kp_id" class="col-sm-2 label-nodefault">默认：</label>
+													<div class="col-sm-10">
+														<select class="col-sm-6 table-bottom-default disabled">
+															<option></option>
+															<option value="EMPTY STRING">EMPTY STRING</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="title" class="col-sm-2 label-nodefault">字符集：</label>
+													<div class="col-sm-10">
+														<select class="col-sm-6 table-bottom-default table-bottom-character-set">
+															<option></option>
+															<option value="EMPTY STRING">EMPTY STRING</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="title" class="col-sm-2 label-nodefault">字符规则：</label>
+													<div class="col-sm-10">
+														<select class="col-sm-6 table-bottom-default table-bottom-character-rule">
+															<option></option>
+															<option value="EMPTY STRING">EMPTY STRING</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="title" class="col-sm-2 label-nodefault">键长度：</label>
+													<div class="col-sm-10">
+														<input type="number" class="col-sm-6 key-length" name="title" value="">
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="kp_id" class="col-sm-12 label-nodefault">
+														<span class="table-bottom-center">
+															<input type="checkbox" /><span>二进制</span>
+														</span>
+													</label>
+												</div>
+											</div>
+											<div class="table-bottom-4 hidden">
+												<div class="form-group">
+													<label for="kp_id" class="col-sm-2 label-nodefault">默认：</label>
+													<div class="col-sm-10">
+														<select class="col-sm-6 table-bottom-default disabled">
+															<option></option>
+															<option value="EMPTY STRING">EMPTY STRING</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="kp_id" class="col-sm-12 label-nodefault">
+														<span class="table-bottom-center">
+															<input type="checkbox" /><span>根据当前时间戳更新</span>
+														</span>
+													</label>
+												</div>
+											</div>
+											<div class="table-bottom-5 hidden">
+												<div class="form-group">
+													<label for="kp_id" class="col-sm-2 label-nodefault">默认：</label>
+													<div class="col-sm-10">
+														<select class="col-sm-6 table-bottom-default disabled">
+															<option></option>
+															<option value="EMPTY STRING">EMPTY STRING</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="kp_id" class="col-sm-12 label-nodefault">
+													<span class="table-bottom-center">
+														<input type="checkbox" /><span>无符号</span>
+													</span>
+												</label>
+												</div>
+												<div class="form-group">
+													<label for="kp_id" class="col-sm-12 label-nodefault">
+													<span class="table-bottom-center">
+														<input type="checkbox" checked="checked"/><span>填充零</span>
+													</span>
+												</label>
+												</div>
+											</div>
+											<div class="table-bottom-6 hidden">
+												<div class="form-group">
+													<label for="title" class="col-sm-2 label-nodefault">值：</label>
+													<div class="col-sm-10">
+														<input type="text" class="col-sm-6" name="title" value="">
+														<div class="table-bottom-price-style">
+															<span class="table-bottom-price">...</span>
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="kp_id" class="col-sm-2 label-nodefault">默认：</label>
+													<div class="col-sm-10">
+														<select class="col-sm-6 table-bottom-default disabled table-bottom-select">
+															<option></option>
+															<option value="EMPTY STRING">EMPTY STRING</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="title" class="col-sm-2 label-nodefault">字符集：</label>
+													<div class="col-sm-10">
+														<select class="col-sm-6 table-bottom-default table-bottom-character-set">
+															<option></option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="title" class="col-sm-2 label-nodefault">字符规则：</label>
+													<div class="col-sm-10">
+														<select class="col-sm-6 table-bottom-default table-bottom-character-rule">
+															<option></option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="datatable-center-style hidden">
+									<div class="table-top-style table-top-index-scroll">
+										<table class="table table-bordered table-bottom add-table table-index-th">
+											<thead>
+												<tr>
+													<th></th>
+													<th>名</th>
+													<th>字段</th>
+													<th>索引类型</th>
+													<th>索引方法</th>
+													<th>注释</th>
+												</tr>
+											</thead>
+											<tbody id="datatable-index-tbody">
+											</tbody>
+										</table>
+									</div>
+									<div class="datatable-bottom">
+
+									</div>
+								</div>
+								<div class="datatable-center-style hidden">
+									<div class="table-top-style table-top-index-scroll">
+										<table class="table table-bordered table-bottom add-table table-key-th">
+											<thead>
+												<tr>
+													<th></th>
+													<th>名</th>
+													<th>字段</th>
+													<th>被应用的模式</th>
+													<th>被引用的表(父)</th>
+													<th>被引用的字段</th>
+													<th>删除时</th>
+													<th>更新时</th>
+												</tr>
+											</thead>
+											<tbody id="datatable-key-tbody">
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="datatable-center-style hidden">
+									<div class="table-top-style table-top-index-scroll">
+										<table class="table table-bordered table-bottom add-table table-trigger-th">
+											<thead>
+												<tr>
+													<th></th>
+													<th>名</th>
+													<th>触发</th>
+													<th>插入</th>
+													<th>更新</th>
+													<th>删除</th>
+												</tr>
+											</thead>
+											<tbody id="datatable-trigger-tbody">
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="datatable-center-style table-option-style  hidden">
+									<div class="form-horizontal">
+										<div class="form-group">
+											<label for="title" class="col-sm-2 control-label pull-left">引擎:</label>
+											<div class="col-sm-10">
+												<select class="form-control">
+													<option value="ARCHIVE">ARCHIVE</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="title" class="col-sm-2 control-label">表空间:</label>
+											<div class="col-sm-10">
+												<select class="form-control">
+													<option value="ARCHIVE">ARCHIVE</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="title" class="col-sm-2 control-label">字符集:</label>
+											<div class="col-sm-10">
+												<select class="form-control">
+													<option value="ARCHIVE">ARCHIVE</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="title" class="col-sm-2 control-label">排序规则:</label>
+											<div class="col-sm-10">
+												<select class="form-control">
+													<option value="ARCHIVE">ARCHIVE</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="title" class="col-sm-2 control-label">自动递增:</label>
+											<div class="col-sm-10">
+												<input type="number" min="0" autocomplete="off" class="form-control" id="title" name="title" value="">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="title" class="col-sm-2 control-label">行格式:</label>
+											<div class="col-sm-10">
+												<select class="form-control">
+													<option value="ARCHIVE">ARCHIVE</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="title" class="col-sm-2 control-label">平均行长度:</label>
+											<div class="col-sm-10">
+												<input type="number" min="0" autocomplete="off" class="form-control" id="title" name="title" value="">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="title" class="col-sm-2 control-label">最大行数:</label>
+											<div class="col-sm-10">
+												<input type="number" min="0" autocomplete="off" class="form-control" id="title" name="title" value="">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="title" class="col-sm-2 control-label">最小行数:</label>
+											<div class="col-sm-10">
+												<input type="number" min="0" autocomplete="off" class="form-control" id="title" name="title" value="">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="title" class="col-sm-2 control-label">键块大小:</label>
+											<div class="col-sm-10">
+												<input type="number" min="0" autocomplete="off" class="form-control" id="title" name="title" value="">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="title" class="col-sm-2 control-label">数据目录:</label>
+											<div class="col-sm-10">
+												<input type="number" min="0" autocomplete="off" class="form-control" id="title" name="title" value="">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="title" class="col-sm-2 control-label">索引目录:</label>
+											<div class="col-sm-10">
+												<input type="number" min="0" autocomplete="off" class="form-control" id="title" name="title" value="">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="title" class="col-sm-2 control-label">统计数据自动重计:</label>
+											<div class="col-sm-10">
+												<input type="number" min="0" autocomplete="off" class="form-control" id="title" name="title" value="">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="title" class="col-sm-2 control-label">统计数据持久:</label>
+											<div class="col-sm-10">
+												<input type="number" min="0" autocomplete="off" class="form-control" id="title" name="title" value="">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="title" class="col-sm-2 control-label">统计样本页面:</label>
+											<div class="col-sm-10">
+												<input type="number" min="0" autocomplete="off" class="form-control" id="title" name="title" value="">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="title" class="col-sm-2 control-label">压缩:</label>
+											<div class="col-sm-10">
+												<input type="number" min="0" autocomplete="off" class="form-control" id="title" name="title" value="">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="title" class="col-sm-2 control-label"><input type="checkbox" /><span>加密</span></label>
+										</div>
+										<div class="form-group">
+											<label for="title" class="col-sm-6 control-label"><button class="form-control partition-btn">分区</button></label>
+										</div>
+									</div>
+								</div>
+								<div class="datatable-center-style annotation-style hidden">
+									<textarea id="annotation-comm"></textarea>
+								</div>
+								<div class="datatable-center-style datatable-center-preview hidden"></div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-tablename="" id="datatable-submit-btn">确定</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+					</div>
+					<div class="table-tablename-modal">
+						<div>
+							<div class="table-name-style">
+								<div class="top-name">
+									<span>表名</span>
+								</div>
+								<div class="center-name">
+									<div class="from-name">
+										<div>
+											<span>输入表名</span>
+											<input type="text" id="table-from-tablename" />
+										</div>
+									</div>
+									<div class="from-name-btn">
+										<div>
+											<span id="table-name-confirm-btn">确认</span>
+											<span id="table-name-cancel-btn">取消</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="table-index-modal">
+						<div>
+							<div class="table-list">
+								<div class="table-list-top">
+									<table class="table table-bordered table-bottom minus-table table-model-index-th">
+										<thead>
+											<tr>
+												<th></th>
+												<th></th>
+												<th>名</th>
+												<th>子部分</th>
+											</tr>
+										</thead>
+										<tbody id="index-field-tbody">
+											<tr>
+												<td>▶</td>
+												<td><input type="checkbox" /></td>
+												<td></td>
+												<td></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="table-list-btm">
+									<div class="table-list-btm-lef">
+										<span class="table-index-field-btn"><svg t="1596889811965" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6835" width="12" height="12"><path d="M368.128 488.448v445.44H634.88v-445.44h230.4L505.856 86.528 145.92 488.448z" p-id="6836"></path></svg></span>
+										<span class="table-index-field-btn"><svg t="1596890288880" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="13705" width="12" height="12"><path d="M186.717 658.98c0 0-12.413-44.318 44.318-44.318 12.816 0 92.939 0 147.966 0v-547.948c0-24.287 19.851-44.139 44.229-44.139h176.959c24.377 0 44.273 19.851 44.273 44.139v547.948c52.922 0 132.327 0 148.907 0 59.509 0 42.884 44.318 42.884 44.318l-324.521 342.401-325.014-342.401z" p-id="13706"></path></svg></span>
+										<span class="table-index-field-btn"><svg t="1596890438419" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1175" width="12" height="12"><path d="M127.99999999 416h767.99999999v192H127.99999999z" fill="#333333" p-id="1176"></path><path d="M896.00000001 640.00000001H127.99999999a32 32 0 0 1-32-32.00000001V416a32 32 0 0 1 32-32.00000001h768.00000002a32 32 0 0 1 31.99999998 32.00000001v192a32 32 0 0 1-31.99999998 31.99999998z m-736.00000001-64h704V448.00000001H160z" fill="#333333" p-id="1177"></path><path d="M416 896.00000001V127.99999999h192v767.99999999z" fill="#333333" p-id="1178"></path><path d="M608 927.99999999H416a32 32 0 0 1-32.00000001-32.00000001V127.99999999a32 32 0 0 1 32.00000001-32h192a32 32 0 0 1 31.99999998 32v768.00000002a32 32 0 0 1-31.99999998 31.99999998z m-159.99999999-63.99999999h128V160H448.00000001z" fill="#333333" p-id="1179"></path></svg></span>
+										<span class="table-index-field-btn"><svg t="1596890490685" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2314" width="12" height="12"><path d="M79.359954 382.157793l896.319016 0 0 226.25607-896.319016 0 0-226.25607Z" p-id="2315"></path></svg></span>
+									</div>
+									<div class="table-list-btm-right">
+										<span class="index-field-affirm-btn">确认</span>
+										<span class="index-field-cancel-btn">取消</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="table-foreign-key-modal">
+						<div>
+							<div class="table-list">
+								<div class="table-list-top">
+									<table class="table table-bordered table-bottom table-foreign-key-th">
+										<thead>
+											<tr>
+												<th></th>
+												<th></th>
+												<th>名</th>
+											</tr>
+										</thead>
+										<tbody id="table-foreign-key-tbody">
+										</tbody>
+									</table>
+								</div>
+								<div class="table-list-btm">
+									<div class="table-list-btm-lef">
+										<span class="table-foreign-key-btn"><svg t="1596889811965" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6835" width="12" height="12"><path d="M368.128 488.448v445.44H634.88v-445.44h230.4L505.856 86.528 145.92 488.448z" p-id="6836"></path></svg></span>
+										<span class="table-foreign-key-btn"><svg t="1596890288880" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="13705" width="12" height="12"><path d="M186.717 658.98c0 0-12.413-44.318 44.318-44.318 12.816 0 92.939 0 147.966 0v-547.948c0-24.287 19.851-44.139 44.229-44.139h176.959c24.377 0 44.273 19.851 44.273 44.139v547.948c52.922 0 132.327 0 148.907 0 59.509 0 42.884 44.318 42.884 44.318l-324.521 342.401-325.014-342.401z" p-id="13706"></path></svg></span>
+									</div>
+									<div class="table-list-btm-right">
+										<span class="foreign-key-affirm-btn">确认</span>
+										<span class="foreign-key-cancel-btn">取消</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade in" id="delete-model" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-sm" role="document">
+				<div class="modal-content">
+					<div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+						<h4 class="modal-title" id="my-kp-delete-model-Label">提示</h4></div>
+					<div class="modal-body"><b class="text-danger delete-affirm-text"></b></div>
+					<div class="modal-footer" style="text-align:center"><button data-loading-text="Loading..." class="btn btn-danger" data-name="" data-value="" id="delete-affirm-btn">确定</button>
+						<a href="javascript:void(0)" class="btn btn-default btn-canel" data-dismiss="modal">取消</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
